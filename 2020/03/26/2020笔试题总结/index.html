@@ -86,7 +86,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="随峰而动" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="随峰而动" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -232,14 +236,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.7k</span>
+              <span>5.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
+              <span>11 分钟</span>
             </span>
             <div class="post-description">2020笔试题总结，包括招商银行、格力、招银网络科技、微众银行、联通广州软件研究院、交通银行</div>
 
@@ -266,8 +270,8 @@
 <p>工厂模式 Calendar.getInstance()</p>
 <p>4.聚集索引</p>
 <p>数据库表行中数据的物理顺序与键值的逻辑（索引）顺序相同。一个表只能有一个聚集索引，因为一个表的物理顺序只有一种情况</p>
-<p>5.mysql语句中 is not null与 !=null，哪个是正确的？</p>
-<p>应使用<strong>is not null</strong>，null不能用=或!=来比较（不会显示编译错误，永远返回0行）</p>
+<p>5.mysql语句中 is not null与 !&#x3D;null，哪个是正确的？</p>
+<p>应使用<strong>is not null</strong>，null不能用&#x3D;或!&#x3D;来比较（不会显示编译错误，永远返回0行）</p>
 <p>6.CSS父元素继承</p>
 <ul>
 <li>不可继承的：display、margin、border、padding、background、height、min-height、max-height、width、min-width、max-width、overflow、position、left、right、top、bottom、z-index、float、clear、table-layout、vertical-align、page-break-after、page-bread-before和unicode-bidi。</li>
@@ -281,7 +285,7 @@
 <p>不仅程序中的每个语句至少被执行一次，而且使每个判定表达式中的每个条件都取到各种可能的结果。</p>
 <p>8.HTTP中401表示？</p>
 <p>表示未授权</p>
-<p>9.多道程序设计，OS/2，DOS？</p>
+<p>9.多道程序设计，OS&#x2F;2，DOS？</p>
 <p>DOS操作系统没有多道程序设计的特点</p>
 <p>10.获取div文本内容</p>
 <p>$(‘#id’).text()</p>
@@ -361,7 +365,7 @@
 <ul>
 <li><p>单道批处理系统：内存中始终保持一道作业。</p>
 </li>
-<li><p>多道批处理系统：运行多个程序同时进入内存，并运行它们在CPU中交替运行。中断处理使I/O和CPU能并行运行。</p>
+<li><p>多道批处理系统：运行多个程序同时进入内存，并运行它们在CPU中交替运行。中断处理使I&#x2F;O和CPU能并行运行。</p>
 </li>
 <li><p>分时操作系统：多个用户通过终端同时共享一台主机。</p>
 </li>
@@ -384,7 +388,7 @@
 <p>(1) 每个对象都有一个锁来控制同步访问，Synchronized关键字可以和对象的锁交互，来实现同步方法或同步块。sleep()方法正在执行的线程主动让出CPU（然后CPU就可以去执行其他任务），在sleep指定时间后CPU再回到该线程继续往下执行(注意：sleep方法只让出了CPU，而并不会释放同步资源锁！！！)。</p>
 <p>(2) wait()方法则是指当前线程让自己暂时退让出同步资源锁，以便其他正在等待该资源的线程得到该资源进而运行，只有调用了notify()方法，之前调用wait()的线程才会解除wait状态，可以去参与竞争同步资源锁，进而得到执行。（注意：notify的作用相当于叫醒睡着的人，而并不会给他分配任务，就是说notify只是让之前调用wait的线程有权利重新参与线程的调度）；</p>
 <p>(3) sleep()方法可以在任何地方使用；wait()方法则只能在同步方法或同步块中使用；</p>
-<p>(4) sleep()是线程线程类（Thread）的方法，调用会暂停此线程指定的时间，但监控依然保持，不会释放对象锁，到时间自动恢复；wait()是Object的方法，调用会放弃对象锁，进入等待队列，待调用notify()/notifyAll()唤醒指定的线程或者所有线程，才会进入锁池，不再次获得对象锁才会进入运行状态；</p>
+<p>(4) sleep()是线程线程类（Thread）的方法，调用会暂停此线程指定的时间，但监控依然保持，不会释放对象锁，到时间自动恢复；wait()是Object的方法，调用会放弃对象锁，进入等待队列，待调用notify()&#x2F;notifyAll()唤醒指定的线程或者所有线程，才会进入锁池，不再次获得对象锁才会进入运行状态；</p>
 </li>
 </ul>
 <p>10.大文件排序，外设上的排序</p>
@@ -410,9 +414,9 @@
 </ul>
 <p>12.网络拓扑结构</p>
 <p>总线型拓扑、星型拓扑、环型拓扑、树型拓扑、网状拓扑、混合型拓扑</p>
-<p>13.&amp;&amp;,+,!,/的优先级</p>
-<p>a=6,b=4,c=2;</p>
-<p>!(a-b)+c-1 &amp;&amp; b+c/2 = ?</p>
+<p>13.&amp;&amp;,+,!,&#x2F;的优先级</p>
+<p>a&#x3D;6,b&#x3D;4,c&#x3D;2;</p>
+<p>!(a-b)+c-1 &amp;&amp; b+c&#x2F;2 &#x3D; ?</p>
 <p>Java中编译失败，C++中值为1</p>
 <p>14.DNS域名解析过程</p>
 <p>两种查询方式：递归查询，递归与迭代相结合查询</p>
@@ -480,7 +484,7 @@
 <p>3.yield()</p>
 <p>是Thread实例的一个方法，用于暂停当前正在执行的线程对象，并执行其他线程。</p>
 <p>yield()应该做的是让当前运行线程回到可运行状态，以允许具有相同优先级的其他线程获得运行机会。因此，使用yield()的目的是让相同优先级的线程之间能适当的轮转执行。但是，实际中无法保证yield()达到让步目的，因为让步的线程还有可能被线程调度程序再次选中。</p>
-<p>4.B/S模式下，加密传输的协议</p>
+<p>4.B&#x2F;S模式下，加密传输的协议</p>
 <p>https</p>
 <p>5.表的创建</p>
 <p>列完整性又称实体完整性？</p>
@@ -675,7 +679,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:12</span>
+    <span title="站点阅读时长">1:13</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div><!-- 背景离子效果 -->
@@ -751,6 +755,8 @@
 
 
 
+
+  
 
   
 

@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="随峰而动" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="随峰而动" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -224,7 +228,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.6k</span>
+              <span>3.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -244,32 +248,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="最大连续子序列和">1. 最大连续子序列和</h1><p>给出一个数字序列{A1,A2,A3,…,An}，求i,j(1&lt;=i&lt;=j&lt;=n)，使得Ai+…+Aj最大，并输出这个最大和。</p>
-<p>如{-2,11,-4,13,-5,-2}<br>最大连续子序列和为 11+(-4)+13=20</p>
+        <h1 id="最大连续子序列和">1. 最大连续子序列和</h1><p>给出一个数字序列{A1,A2,A3,…,An}，求i,j(1&lt;&#x3D;i&lt;&#x3D;j&lt;&#x3D;n)，使得Ai+…+Aj最大，并输出这个最大和。</p>
+<p>如{-2,11,-4,13,-5,-2}<br>最大连续子序列和为 11+(-4)+13&#x3D;20</p>
 <h2 id="结题思路">1.1. 结题思路</h2><p>1.设计状态：dp[i]表示以A[i]结尾的连续序列的最大和</p>
-<p>2.找出关系 ：<br>因为dp[i]要求必须以A[i]为结尾，那么就有两种情况：<br>(1) 这个最大和只有一个元素，就是A[i]，dp[i]=A[i]<br>(2) 这个最大和有多个元素，从A[p]到A[i](p&lt;i)，dp[i] = dp[i-1] + A[i]</p>
-<p>3.设计状态转移方程：<br>dp[i] = max{A[i], dp[i-1]+A[i]}</p>
+<p>2.找出关系 ：<br>因为dp[i]要求必须以A[i]为结尾，那么就有两种情况：<br>(1) 这个最大和只有一个元素，就是A[i]，dp[i]&#x3D;A[i]<br>(2) 这个最大和有多个元素，从A[p]到A[i](p&lt;i)，dp[i] &#x3D; dp[i-1] + A[i]</p>
+<p>3.设计状态转移方程：<br>dp[i] &#x3D; max{A[i], dp[i-1]+A[i]}</p>
 <h2 id="关键代码">1.2. 关键代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ans = Integer.MIN_VALUE; <span class="comment">//最大连续子序列和</span></span><br><span class="line"><span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">dp[<span class="number">0</span>] = A[<span class="number">0</span>]; <span class="comment">//初始化dp[0]</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    dp[i] = Math.max(A[i], dp[i - <span class="number">1</span>] + A[i]);</span><br><span class="line">    ans = Math.max(ans, dp[i]);<span class="comment">//取dp数组中的最大值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="最长不下降子序列（LIS）">2. 最长不下降子序列（LIS）</h1><p>在一个数字序列中，找到一个最长的子序列（可以不连续），这个子序列是非递减的</p>
 <p>如{1,2,3,-1,-2,7,9}<br>最长不下降子序列为 {1,2,3,7,9}，长度为5</p>
 <h2 id="结题思路-1">2.1. 结题思路</h2><p>1.设计状态：dp[i]表示以A[i]结尾的最长不下降子序列的长度</p>
-<p>2.找出关系：<br>(1) 如果A[i]之前的元素全部都比A[i]大，那么dp[i]只能等于1<br>(2) 如果A[i]之前的元素A[j](j&lt;i)，有A[j]&lt;=A[i]，找到其中最长的一个，然后加上A[i]，则dp[i]就是最长的</p>
-<p>3.设计状态转移方程：<br>dp[i]=max{1,dp[j]+1} (0&lt;=j&lt;i&amp;&amp;A[j]&lt;=A[i])<br>其中dp[j]是dp[0,i-1]中的最大值</p>
+<p>2.找出关系：<br>(1) 如果A[i]之前的元素全部都比A[i]大，那么dp[i]只能等于1<br>(2) 如果A[i]之前的元素A[j](j&lt;i)，有A[j]&lt;&#x3D;A[i]，找到其中最长的一个，然后加上A[i]，则dp[i]就是最长的</p>
+<p>3.设计状态转移方程：<br>dp[i]&#x3D;max{1,dp[j]+1} (0&lt;&#x3D;j&lt;i&amp;&amp;A[j]&lt;&#x3D;A[i])<br>其中dp[j]是dp[0,i-1]中的最大值</p>
 <h2 id="关键代码-1">2.2. 关键代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ans = -<span class="number">1</span>; <span class="comment">// 初始化ans</span></span><br><span class="line"><span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line"><span class="comment">// 初始化dp中的元素为1</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    dp[i] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123; <span class="comment">// 遍历[0,i-1]找出最大的满足A[i]&gt;=A[j]的dp[j]，然后更新</span></span><br><span class="line">        <span class="keyword">if</span> (A[i] &gt;= A[j] &amp;&amp; (dp[j] + <span class="number">1</span> &gt; dp[i])) &#123;</span><br><span class="line">            dp[i] = dp[j] + <span class="number">1</span>; <span class="comment">// 状态转移方程，更新dp[i]</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans = Math.max(ans, dp[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="最长公共子序列（LCS）">3. 最长公共子序列（LCS）</h1><p>给定两个字符串（或数字序列）A和B，求它们的最长公共子序列（可以不连续）</p>
-<p>如A=”sadstory”<br>B=”adminsorry”<br>最长公共子序列为”adsory”，长度为6</p>
+<p>如A&#x3D;”sadstory”<br>B&#x3D;”adminsorry”<br>最长公共子序列为”adsory”，长度为6</p>
 <h2 id="结题思路-2">3.1. 结题思路</h2><p>1.设计状态：dp[i][j] 表示字符串A的i号位和字符串B的j号位之前的LCS长度</p>
-<p>2.找出关系：<br>(1) 若A[i]==B[i]，相当于在dp[i-1][j-1]的情况下多出一个相同字符，LCS长度增加，即dp[i][j]=dp[i-1][j-1]+1<br>(2) 若A[i]!=B[i]，则LCS长度没有增加，所以要继承前面的长度，前面的长度有两种，分别是dp[i-1][j]和dp[i][j-1]，所以取它们两个的最大值作为dp[i][j]的值，<br>即dp[i][j]=max{dp[i-1][j] , dp[i][j-1]}</p>
-<p>3.设计状态转移方程：<br>dp[i]=dp[i-1][j-1]+1, A[i]==B[i]<br>dp[i]=max{dp[i-1][j] , dp[i][j-1]} , A[i]!=B[i] </p>
+<p>2.找出关系：<br>(1) 若A[i]=&#x3D;B[i]，相当于在dp[i-1][j-1]的情况下多出一个相同字符，LCS长度增加，即dp[i][j]&#x3D;dp[i-1][j-1]+1<br>(2) 若A[i]!&#x3D;B[i]，则LCS长度没有增加，所以要继承前面的长度，前面的长度有两种，分别是dp[i-1][j]和dp[i][j-1]，所以取它们两个的最大值作为dp[i][j]的值，<br>即dp[i][j]&#x3D;max{dp[i-1][j] , dp[i][j-1]}</p>
+<p>3.设计状态转移方程：<br>dp[i]&#x3D;dp[i-1][j-1]+1, A[i]=&#x3D;B[i]<br>dp[i]&#x3D;max{dp[i-1][j] , dp[i][j-1]} , A[i]!&#x3D;B[i] </p>
 <h2 id="关键代码-2">3.2. 关键代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>[] A = <span class="keyword">new</span> <span class="keyword">char</span>[n];</span><br><span class="line"><span class="keyword">char</span>[] B = <span class="keyword">new</span> <span class="keyword">char</span>[n];</span><br><span class="line"><span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</span><br><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>] = (A[<span class="number">0</span>] == B[<span class="number">0</span>]) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 初始化第一行和第一列</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (A[i] == B[i]) &#123;</span><br><span class="line">        dp[<span class="number">0</span>][i] = <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        dp[<span class="number">0</span>][i] = dp[<span class="number">0</span>][i - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (A[j] == B[j]) &#123;</span><br><span class="line">        dp[j][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        dp[j][<span class="number">0</span>] = dp[j - <span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 从(1,1)开始遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (A[i] == B[i]) &#123;</span><br><span class="line">            dp[i][j] = dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            dp[i][j] = Math.max(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ans = dp[n][n];</span><br></pre></td></tr></table></figure>
 
 <h1 id="最长回文子串">4. 最长回文子串</h1><p>给出一个字符串S，求S的最长回文子串的长度</p>
 <p>如字符串”abcDDDccba”的最长回文子串是”cDDDc”，长度为5</p>
-<h2 id="结题思路-3">4.1. 结题思路</h2><p>1.设计状态：dp[i][j] 表示S[i]到S[j]所表示的子串是否是回文子串，是则为1，不是则为0。dp[i][j]有初始的状态，单个字符时，一定是回文串（即dp[i][i]=1）；两个字符时，如果相同则是回文串（即dp[i][i+1]=(S[i]==S[i+1]):1?0）</p>
-<p>2.找出关系：<br>根据S[i]是否等于S[j]，可以分为两类：<br>(1) 若S[i]==S[j]，如果[i+1,j-1]是回文串（即dp[i+1][j-1]=1），那么[i,j]也是回文串（即dp[i][j]=1）；如果[i+1,j-1]不是回文串，[i,j]就也不是回文串<br>(2) 若S[i]!=S[j]，则[i,j]必然不是回文串</p>
-<p>3.设计状态转移方程：<br>dp[i][j]=dp[i+1][j-1]，S[i]==S[j]<br>dp[i][j]=0，S[i]!=S[j]<br>边界：dp[i][i]=1， dp[i][i+1]=(S[i]==S[i+1]):1?0<br>因为[i,j]是根据[i+1,j-1]推出来的，即长的子串由短的子串推出，所以在迭代计算dp时，可以按长度递增的顺序不断推出较长的子串</p>
+<h2 id="结题思路-3">4.1. 结题思路</h2><p>1.设计状态：dp[i][j] 表示S[i]到S[j]所表示的子串是否是回文子串，是则为1，不是则为0。dp[i][j]有初始的状态，单个字符时，一定是回文串（即dp[i][i]&#x3D;1）；两个字符时，如果相同则是回文串（即dp[i][i+1]&#x3D;(S[i]=&#x3D;S[i+1]):1?0）</p>
+<p>2.找出关系：<br>根据S[i]是否等于S[j]，可以分为两类：<br>(1) 若S[i]=&#x3D;S[j]，如果[i+1,j-1]是回文串（即dp[i+1][j-1]&#x3D;1），那么[i,j]也是回文串（即dp[i][j]&#x3D;1）；如果[i+1,j-1]不是回文串，[i,j]就也不是回文串<br>(2) 若S[i]!&#x3D;S[j]，则[i,j]必然不是回文串</p>
+<p>3.设计状态转移方程：<br>dp[i][j]&#x3D;dp[i+1][j-1]，S[i]=&#x3D;S[j]<br>dp[i][j]&#x3D;0，S[i]!&#x3D;S[j]<br>边界：dp[i][i]&#x3D;1， dp[i][i+1]&#x3D;(S[i]&#x3D;&#x3D;S[i+1]):1?0<br>因为[i,j]是根据[i+1,j-1]推出来的，即长的子串由短的子串推出，所以在迭代计算dp时，可以按长度递增的顺序不断推出较长的子串</p>
 <h2 id="关键代码-3">4.2. 关键代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">&quot;abcDDDccba&quot;</span>;</span><br><span class="line"><span class="keyword">int</span> len = str.length();</span><br><span class="line"><span class="keyword">char</span>[] S = str.toCharArray();</span><br><span class="line"><span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[len][len]; <span class="comment">// 初始化全为0</span></span><br><span class="line"><span class="keyword">int</span> ans = <span class="number">1</span>; <span class="comment">// 记录最长回文子串长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化单个字符</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">    dp[i][i] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 初始化两个字符</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (S[i] == S[i + <span class="number">1</span>]) &#123;</span><br><span class="line">        dp[i][i + <span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        ans = <span class="number">2</span>; <span class="comment">// 如果有长度为2的回文子串，改变ans</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        dp[i][i + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> L = <span class="number">3</span>; L &lt;= len; L++) &#123; <span class="comment">// 长度从3开始递增</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = i + L - <span class="number">1</span>; <span class="comment">// i为左端，j为右端</span></span><br><span class="line">        <span class="keyword">if</span> (S[i] == S[j] &amp;&amp; dp[i + <span class="number">1</span>][j - <span class="number">1</span>] == <span class="number">1</span>) &#123; <span class="comment">// 两端相等&amp;&amp;里面是回文子串</span></span><br><span class="line">            dp[i][j] = <span class="number">1</span>;</span><br><span class="line">            ans = L;</span><br><span class="line">        &#125; <span class="comment">// 其余都为0，不需要改变</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>另一个简化方法</p>
@@ -431,7 +435,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:12</span>
+    <span title="站点阅读时长">1:13</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div><!-- 背景离子效果 -->
@@ -507,6 +511,8 @@
 
 
 
+
+  
 
   
 

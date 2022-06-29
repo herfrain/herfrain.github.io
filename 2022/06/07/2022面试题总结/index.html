@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png">
 <meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/1620.png">
 <meta property="article:published_time" content="2022-06-07T10:40:00.000Z">
-<meta property="article:modified_time" content="2022-06-07T11:06:39.023Z">
+<meta property="article:modified_time" content="2022-06-29T00:56:27.311Z">
 <meta property="article:author" content="Herfrain">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-e367a5e3bc28fb7fd083ddc201e7e693_720w.png">
@@ -83,7 +83,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="随峰而动" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="随峰而动" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -196,10 +200,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-06-07 18:40:00 / 修改时间：19:06:39" itemprop="dateCreated datePublished" datetime="2022-06-07T18:40:00+08:00">2022-06-07</time>
+              <time title="创建时间：2022-06-07 18:40:00" itemprop="dateCreated datePublished" datetime="2022-06-07T18:40:00+08:00">2022-06-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-29 08:56:27" itemprop="dateModified" datetime="2022-06-29T08:56:27+08:00">2022-06-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -255,7 +265,7 @@
 <img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-e367a5e3bc28fb7fd083ddc201e7e693_720w.png" class title="img">
 
 <p>Http通讯过程：<br>(1).客户端请求连接，进行TCP三次握手后建立连接<br>(2).传输数据（明文传输）<br>(3).客户端请求释放连接，TPC四次挥手后释放连接</p>
-<p>Https：Https = Http + SSL/TLS，是安全的超文本传输协议，默认端口为443，TLS是传输层安全协议</p>
+<p>Https：Https &#x3D; Http + SSL&#x2F;TLS，是安全的超文本传输协议，默认端口为443，TLS是传输层安全协议</p>
 <img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-5e2241fae8b593ff7f3b3a308ef81c10_720w.png" class title="img">
 
 <p>Https通讯过程：<br>(1).客户端请求连接，进行TCP三次握手后建立连接<br>(2).服务器把证书发送给客户端（证书是第三方机构派发给服务器的，其中有服务器的公钥、签名等信息）<br>(3).客户端对证书进行验证，如果验证失败，则表示服务器不可信<br>(4).客户端从证书中取出服务器公钥，并使用这个公钥对自己的对称加密算法和对称密钥进行加密，发送给服务器<br>(5).服务器使用自己的私钥解密，得到对称加密算法和对称密钥<br>(6).双方使用相同的对称加密算法和对称密钥，对数据加密处理后再传输<br>(7).客户端请求释放连接，TPC四次挥手后释放连接</p>
@@ -272,7 +282,7 @@
 <li>str：要查找的字符串</li>
 <li>strList：从中搜索的以逗号分割的字符串列表</li>
 </ul>
-<h2 id="字节Tiktok-一面-3-24">1.3. 字节Tiktok 一面 3/24</h2><p>1、项目用到的框架</p>
+<h2 id="字节Tiktok-一面-3-x2F-24">1.3. 字节Tiktok 一面 3&#x2F;24</h2><p>1、项目用到的框架</p>
 <p>2、Mysql语句，按时间顺序查找</p>
 <p><code>SELECT userID, SUM(totalWeight) as weight_sum FROM order_recycle WHERE state = &#39;1&#39; GROUP BY userID HAVING weight_sum &gt;= 1000 ORDER BY orderDate</code></p>
 <p>3、having 和 where 的区别</p>
@@ -308,7 +318,7 @@
 <th>线程安全</th>
 <th>并发性能好</th>
 <th>延迟加载</th>
-<th>序列化/反序列化</th>
+<th>序列化&#x2F;反序列化</th>
 <th>能抵御反射攻击</th>
 </tr>
 </thead>
@@ -368,7 +378,7 @@
 <p>动态规划</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j] // 存储以[i,j]为右下角的最大正方形边长</span><br><span class="line">dp[i][j] = MIN&#123;dp[i-1][j-1], dp[i-1][j], dp[i][j-1]&#125; + 1, nums[i][j] == 1</span><br></pre></td></tr></table></figure>
 
-<h2 id="蚂蚁-支付宝-一面-3-29">1.4. 蚂蚁 支付宝 一面 3/29</h2><p>1、项目，如何定时生成长期订单，如果生成的过程中出现异常怎么办</p>
+<h2 id="蚂蚁-支付宝-一面-3-x2F-29">1.4. 蚂蚁 支付宝 一面 3&#x2F;29</h2><p>1、项目，如何定时生成长期订单，如果生成的过程中出现异常怎么办</p>
 <p>2、密码是明文吗？MD5加密</p>
 <p>3、加密和签密的区别，对称加密和非对称加密，有什么了解的算法</p>
 <p>4、并发访问时如何处理</p>
@@ -382,7 +392,7 @@
 <p>1、工作地点在上海，线上办公</p>
 <p>2、主要做什么工作？</p>
 <p>支付宝的支付业务，商家码，二维码支付那些</p>
-<h2 id="字节-一面-3-31">1.5. 字节 一面 3/31</h2><p>1、讲一下项目</p>
+<h2 id="字节-一面-3-x2F-31">1.5. 字节 一面 3&#x2F;31</h2><p>1、讲一下项目</p>
 <p>2、项目用了Redis，用来做什么？Redis和MySQL有什么区别？</p>
 <p>3、Redis和MySQL如何保证数据一致？</p>
 <p>读操作不会导致两者数据不一致：若读命中Redis缓存，则直接返回Redis中的数据；若没有命中，则从MySQL数据库中查询数据，并且放入缓存中，再返回查询的数据。读操作是可以保证数据一致的，他没有修改数据。</p>
@@ -460,12 +470,12 @@
 
 <p>反问：</p>
 <p>1、部门是大力教育</p>
-<h2 id="字节-二面-4-2">1.6. 字节 二面 4/2</h2><p>1、输入url到返回到客户端渲染页面，整个请求的过程说一下</p>
+<h2 id="字节-二面-4-x2F-2">1.6. 字节 二面 4&#x2F;2</h2><p>1、输入url到返回到客户端渲染页面，整个请求的过程说一下</p>
 <ol>
 <li>url域名-&gt;DNS解析-&gt;IP地址</li>
 <li>请求建立TCP连接（三次握手）</li>
 <li>客户端向该IP地址发送HTTP请求</li>
-<li>HTTP报文封装成TCP/IP报文在路由器之间传递，路由器使用OSPF（Open Shortest Path First，开放最短路径优先协议）进行寻路</li>
+<li>HTTP报文封装成TCP&#x2F;IP报文在路由器之间传递，路由器使用OSPF（Open Shortest Path First，开放最短路径优先协议）进行寻路</li>
 <li>当报文传递到目标服务器所在局域网的路由器后，路由器能直接查询到该IP地址，并用ARP（Address Resolution Protocol，地址解析协议）解析IP地址，得到机器的MAC地址</li>
 <li>交换机通过MAC地址来转发数据帧</li>
 <li>服务器接收到该帧，解封装成HTTP请求，然后再执行MVC的操作处理请求，返回HTTP响应</li>
@@ -542,7 +552,7 @@
 </tr>
 </tbody></table>
 <p>8、编程题：LFU（焯！）</p>
-<h2 id="字节-三面-4-6">1.7. 字节 三面 4/6</h2><p>1、拿手的项目，项目技术上的难点</p>
+<h2 id="字节-三面-4-x2F-6">1.7. 字节 三面 4&#x2F;6</h2><p>1、拿手的项目，项目技术上的难点</p>
 <p>2、谈谈你的研究方向，对你的影响，对未来职业的影响</p>
 <p>3、考了前两面答的不好的题目：事务一致性，HTTPS，执行exe的过程</p>
 <p>4、SSL证书是怎么申请的，CA再派发证书时，他们的分布式如何负载均衡？</p>
@@ -551,9 +561,9 @@
 <p>7、MySQL的MVCC了解吗？</p>
 <p>8、编程题1：队列实现栈</p>
 <p>9、编程题2：求平方根</p>
-<h2 id="蚂蚁-二面-4-6">1.8. 蚂蚁 二面 4/6</h2><p>1、操作系统，BIO，NIO，AIO，他们的使用场景是什么？</p>
+<h2 id="蚂蚁-二面-4-x2F-6">1.8. 蚂蚁 二面 4&#x2F;6</h2><p>1、操作系统，BIO，NIO，AIO，他们的使用场景是什么？</p>
 <p>BIO 同步阻塞，服务器实现模式一个连接一个线程，即客户端有连接请求时服务端就需要启动一个线程进行处理，如果这个连接不做任何事情，就会造成不必要的线程开销。适用于连接数目比较小且固定的结构。</p>
-<p>NIO 同步非阻塞，服务器实现模式一个请求一个线程，即客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到连接有 I/O 请求时才启动一个线程处理。用户进程也需要时不时地询问IO操作是否就绪，这就要求用户进程不停的去询问。适用于连接数目多且连接比较短的架构，比如聊天服务器。</p>
+<p>NIO 同步非阻塞，服务器实现模式一个请求一个线程，即客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到连接有 I&#x2F;O 请求时才启动一个线程处理。用户进程也需要时不时地询问IO操作是否就绪，这就要求用户进程不停的去询问。适用于连接数目多且连接比较短的架构，比如聊天服务器。</p>
 <p>NIO 异步阻塞，应用发起一个 IO 操作以后，不需要等待内核 IO 操作完成，等待内核完成 IO 操作以后会通知应用程序，通过 select 系统调用来完成的，而 select 函数本身的实现方式就是阻塞的。</p>
 <p>AIO 异步非阻塞，用户进程只需要发起一个IO操作便立即返回，等 IO 操作真正完成以后，应用程序会得到IO操作完成的通知。适用于连接数目多且连接比较长（重操作）的架构，比如相册服务器。</p>
 <blockquote>
@@ -570,7 +580,7 @@
 <p>8、单机项目如何提高并发（应该要回答多线程）</p>
 <p>9、项目中用过什么设计模式</p>
 <p>10、最近在学什么技术</p>
-<h2 id="美团-一面-4-12">1.9. 美团 一面 4/12</h2><p>1、进程和线程的区别</p>
+<h2 id="美团-一面-4-x2F-12">1.9. 美团 一面 4&#x2F;12</h2><p>1、进程和线程的区别</p>
 <p>2、内存管理方法</p>
 <p>3、HashMap的key能否为null？</p>
 <p>4、HashMap数据结构，如何解决冲突，如何获取哈希值</p>
@@ -603,7 +613,7 @@
 <p>16、根据什么配置线程池的线程数量？</p>
 <ul>
 <li><strong>CPU 密集型任务(N+1)：</strong> 这种任务消耗的主要是 CPU 资源，可以将线程数设置为 N（CPU 核心数）+1，比 CPU 核心数多出来的一个线程是为了防止线程偶发的缺页中断，或者其它原因导致的任务暂停而带来的影响。一旦任务暂停，CPU 就会处于空闲状态，而在这种情况下多出来的一个线程就可以充分利用 CPU 的空闲时间。</li>
-<li><strong>I/O 密集型任务(2N)：</strong> 这种任务应用起来，系统会用大部分的时间来处理 I/O 交互，而线程在处理 I/O 的时间段内不会占用 CPU 来处理，这时就可以将 CPU 交出给其它线程使用。因此在 I/O 密集型任务的应用中，我们可以多配置一些线程，具体的计算方法是 2N。</li>
+<li><strong>I&#x2F;O 密集型任务(2N)：</strong> 这种任务应用起来，系统会用大部分的时间来处理 I&#x2F;O 交互，而线程在处理 I&#x2F;O 的时间段内不会占用 CPU 来处理，这时就可以将 CPU 交出给其它线程使用。因此在 I&#x2F;O 密集型任务的应用中，我们可以多配置一些线程，具体的计算方法是 2N。</li>
 </ul>
 <p>17、线程池工作过程</p>
 <img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png" class title="图解线程池实现原理">
@@ -628,7 +638,7 @@
 <p>byType：根据<strong>变量类型</strong>注入，当有多个实现类，则会报错</p>
 <p>byName：根据<strong>变量名</strong>注入</p>
 <p><code>@Autowired</code>先通过byType方式注入，若检测到有多个实现类，则根据变量名byName注入（如变量名为numberServiceImp，它默认查找NumberServiceImp类），若找不到与变量名相同的实现类则报错。也可以用 <code>@Qulifier(&quot;xxx&quot;)</code>指定特定实现类注入（里面的名字要与 <code>@Service(&quot;xxx&quot;)</code>相同）。</p>
-<p>21、==与equals的区别</p>
+<p>21、&#x3D;&#x3D;与equals的区别</p>
 <p>22、协程了解吗？</p>
 <p>协程（Coroutines）是一种比线程更加轻量级的存在。协程完全由程序所控制（在用户态执行），带来的好处是性能大幅度的提升。一个线程可以有多个协程。协程是一个特殊的函数，这个函数可以在某个地方挂起，并且可以重新在挂起处继续运行。</p>
 <p><strong>一个线程内的多个协程的运行是串行的</strong>，这点和多进程（多线程）在多核CPU上执行时是不同的。 多进程（多线程）在多核CPU上是可以并行的。<strong>当线程内的某一个协程运行时，其它协程必须挂起。</strong></p>
@@ -640,7 +650,7 @@
 <li>IO型的操作，利用协程在IO等待时间就去切换执行其他任务，当IO操作结束后再自动回调，那么就会大大节省资源并提供性能，从而实现异步编程（不等待任务结束就可以去执行其他代码）。</li>
 </ul>
 <p>23、编程：判断有向图中是否存在环</p>
-<h2 id="美团-二面-4-15">1.10. 美团 二面 4/15</h2><p>1、未来职业规划</p>
+<h2 id="美团-二面-4-x2F-15">1.10. 美团 二面 4&#x2F;15</h2><p>1、未来职业规划</p>
 <p>2、编程：非递归中序遍历</p>
 <p>3、编程：n个数中有1个唯一的数，其他数都出现2次</p>
 <p>4、编程：n个数中有1个唯一的数，其他数都出现3次</p>
@@ -726,7 +736,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93"><span class="nav-text">1. 2022面试题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95%E5%B2%97"><span class="nav-text">1.1. 阿里密码算法岗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91%E6%99%BA%E8%83%BD-ProtalDB"><span class="nav-text">1.2. 阿里云智能-ProtalDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82Tiktok-%E4%B8%80%E9%9D%A2-3-24"><span class="nav-text">1.3. 字节Tiktok 一面 3&#x2F;24</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%9A%82%E8%9A%81-%E6%94%AF%E4%BB%98%E5%AE%9D-%E4%B8%80%E9%9D%A2-3-29"><span class="nav-text">1.4. 蚂蚁 支付宝 一面 3&#x2F;29</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82-%E4%B8%80%E9%9D%A2-3-31"><span class="nav-text">1.5. 字节 一面 3&#x2F;31</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82-%E4%BA%8C%E9%9D%A2-4-2"><span class="nav-text">1.6. 字节 二面 4&#x2F;2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82-%E4%B8%89%E9%9D%A2-4-6"><span class="nav-text">1.7. 字节 三面 4&#x2F;6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%9A%82%E8%9A%81-%E4%BA%8C%E9%9D%A2-4-6"><span class="nav-text">1.8. 蚂蚁 二面 4&#x2F;6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2-%E4%B8%80%E9%9D%A2-4-12"><span class="nav-text">1.9. 美团 一面 4&#x2F;12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2-%E4%BA%8C%E9%9D%A2-4-15"><span class="nav-text">1.10. 美团 二面 4&#x2F;15</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93"><span class="nav-text">1. 2022面试题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95%E5%B2%97"><span class="nav-text">1.1. 阿里密码算法岗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91%E6%99%BA%E8%83%BD-ProtalDB"><span class="nav-text">1.2. 阿里云智能-ProtalDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82Tiktok-%E4%B8%80%E9%9D%A2-3-x2F-24"><span class="nav-text">1.3. 字节Tiktok 一面 3&#x2F;24</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%9A%82%E8%9A%81-%E6%94%AF%E4%BB%98%E5%AE%9D-%E4%B8%80%E9%9D%A2-3-x2F-29"><span class="nav-text">1.4. 蚂蚁 支付宝 一面 3&#x2F;29</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82-%E4%B8%80%E9%9D%A2-3-x2F-31"><span class="nav-text">1.5. 字节 一面 3&#x2F;31</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82-%E4%BA%8C%E9%9D%A2-4-x2F-2"><span class="nav-text">1.6. 字节 二面 4&#x2F;2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82-%E4%B8%89%E9%9D%A2-4-x2F-6"><span class="nav-text">1.7. 字节 三面 4&#x2F;6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%9A%82%E8%9A%81-%E4%BA%8C%E9%9D%A2-4-x2F-6"><span class="nav-text">1.8. 蚂蚁 二面 4&#x2F;6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2-%E4%B8%80%E9%9D%A2-4-x2F-12"><span class="nav-text">1.9. 美团 一面 4&#x2F;12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2-%E4%BA%8C%E9%9D%A2-4-x2F-15"><span class="nav-text">1.10. 美团 二面 4&#x2F;15</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -799,7 +809,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:12</span>
+    <span title="站点阅读时长">1:13</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div><!-- 背景离子效果 -->
@@ -877,6 +887,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

@@ -90,7 +90,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="随峰而动" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="随峰而动" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -236,7 +240,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.6k</span>
+              <span>7.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -315,7 +319,7 @@
 </ol>
 </li>
 <li>指针<ol>
-<li>指向变量的内存地址 int *p; int a; p=&a;</li>
+<li>指向变量的内存地址 int *p; int a; p&#x3D;&amp;a;</li>
 <li>间接访问变量，通过地址访问变量</li>
 <li>可以为空指针</li>
 <li>可以用const修饰，指针常量，表示该指针不可变（地址不可变）</li>
@@ -356,10 +360,10 @@
 <li><p>MyBatis，用#还是$符号？</p>
 <ol>
 <li><p>#{a} 自动把a的值变为字符串，即加上了’’；预编译；防止sql注入</p>
-<p>如id的值为2，则select * from admin where id=#{id}-&gt; select * from admin where id=’2’</p>
+<p>如id的值为2，则select * from admin where id&#x3D;#{id}-&gt; select * from admin where id&#x3D;’2’</p>
 </li>
 <li><p>${a} 不会将a当做字符串处理，原来值是什么就是什么</p>
-<p>如id的值为2，则select * from admin where id=#{id}-&gt; select * from admin where id=2</p>
+<p>如id的值为2，则select * from admin where id&#x3D;#{id}-&gt; select * from admin where id&#x3D;2</p>
 <p>如id的值为id，可以用于select * from admin order by ${id}-&gt; select * from admin order by id</p>
 </li>
 </ol>
@@ -423,7 +427,7 @@
 </li>
 <li><p>快排</p>
 </li>
-<li><p>TCP/UDP</p>
+<li><p>TCP&#x2F;UDP</p>
 </li>
 <li><p>TCP的建立与释放</p>
 </li>
@@ -434,7 +438,7 @@
 <ol>
 <li><p>计算机系统中的堆和栈，变量保存在哪？</p>
 <p>栈（stack）：系统自动分配和回收，连续存储（速度快），保存局部变量</p>
-<p>堆（heap）：程序员自己分配（如malloc/new）和回收（如free/delete），程序结束时系统也会回收，不连续存储（速度慢），程序员自己设定变量</p>
+<p>堆（heap）：程序员自己分配（如malloc&#x2F;new）和回收（如free&#x2F;delete），程序结束时系统也会回收，不连续存储（速度慢），程序员自己设定变量</p>
 </li>
 <li><p>死锁，资源</p>
 <p>多个进程竞争同一个不可剥夺的资源而出现互相等待的局面（如打印机、磁带机资源）</p>
@@ -625,9 +629,9 @@
 <li>线程的创建、调度、同步，由所属进程的用户空间线程库实现。</li>
 <li>用户态线程，对内核几乎是透明的（许多操作不需要内核接管）</li>
 <li>但线程总要有一些操作经过内核，比如系统调用。</li>
-<li>不需要频繁的内核态/用户态切换，处理速度非常快。</li>
-<li>该模式下，当进程的某个线程，系统调用（比如I/O）阻塞时，该进程也会阻塞。</li>
-<li>原因：该模式下，进程的所有线程，都对应一个内核调度实体（KES），并且内核不知道这个进程有哪些线程。KES无法将其他线程，调度到其他处理器上。该进程（所有的线程）被阻塞，直到本次系统调用（比如I/O）结束。</li>
+<li>不需要频繁的内核态&#x2F;用户态切换，处理速度非常快。</li>
+<li>该模式下，当进程的某个线程，系统调用（比如I&#x2F;O）阻塞时，该进程也会阻塞。</li>
+<li>原因：该模式下，进程的所有线程，都对应一个内核调度实体（KES），并且内核不知道这个进程有哪些线程。KES无法将其他线程，调度到其他处理器上。该进程（所有的线程）被阻塞，直到本次系统调用（比如I&#x2F;O）结束。</li>
 </ul>
 <p>(2) 1对1内核级线程模型（Linux一般使用这个模型）</p>
 <ul>
@@ -705,7 +709,7 @@
 <p>[3|ABC]-&gt;ABCABCABC</p>
 <p>HG[3|B[2|CA]]F-&gt;</p>
 <p>(3) 翻转数列</p>
-<p>n个数(1至n)，然后m表示每m个数符号翻转一次，初始符号为’-’，n%2m==0</p>
+<p>n个数(1至n)，然后m表示每m个数符号翻转一次，初始符号为’-’，n%2m&#x3D;&#x3D;0</p>
 <p>输入：</p>
 <p>8 2</p>
 <p>-1,-2,3,4,-5,-6,7,8</p>
@@ -786,7 +790,7 @@
 <li>配置文件注入方法，数据保存在什么地方</li>
 <li>bean的生命周期</li>
 <li>入口类</li>
-<li>mapper有哪几种，除了get/post 还有其他吗？get和post的区别</li>
+<li>mapper有哪几种，除了get&#x2F;post 还有其他吗？get和post的区别</li>
 </ol>
 </li>
 <li><p>mybatis多少级缓存？</p>
@@ -951,7 +955,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:12</span>
+    <span title="站点阅读时长">1:13</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div><!-- 背景离子效果 -->
@@ -1027,6 +1031,8 @@
 
 
 
+
+  
 
   
 
