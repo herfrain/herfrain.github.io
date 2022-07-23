@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png">
 <meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/1620.png">
 <meta property="article:published_time" content="2022-06-07T10:40:00.000Z">
-<meta property="article:modified_time" content="2022-06-29T00:56:27.311Z">
+<meta property="article:modified_time" content="2022-07-20T09:30:11.958Z">
 <meta property="article:author" content="Herfrain">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-e367a5e3bc28fb7fd083ddc201e7e693_720w.png">
@@ -132,17 +132,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">6</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">10</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -208,7 +208,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-29 08:56:27" itemprop="dateModified" datetime="2022-06-29T08:56:27+08:00">2022-06-29</time>
+                <time title="修改时间：2022-07-20 17:30:11" itemprop="dateModified" datetime="2022-07-20T17:30:11+08:00">2022-07-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,7 +240,7 @@
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>20 分钟</span>
+              <span>21 分钟</span>
             </span>
             <div class="post-description">阿里、字节、美团面经</div>
 
@@ -268,7 +268,8 @@
 <p>Https：Https &#x3D; Http + SSL&#x2F;TLS，是安全的超文本传输协议，默认端口为443，TLS是传输层安全协议</p>
 <img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-5e2241fae8b593ff7f3b3a308ef81c10_720w.png" class title="img">
 
-<p>Https通讯过程：<br>(1).客户端请求连接，进行TCP三次握手后建立连接<br>(2).服务器把证书发送给客户端（证书是第三方机构派发给服务器的，其中有服务器的公钥、签名等信息）<br>(3).客户端对证书进行验证，如果验证失败，则表示服务器不可信<br>(4).客户端从证书中取出服务器公钥，并使用这个公钥对自己的对称加密算法和对称密钥进行加密，发送给服务器<br>(5).服务器使用自己的私钥解密，得到对称加密算法和对称密钥<br>(6).双方使用相同的对称加密算法和对称密钥，对数据加密处理后再传输<br>(7).客户端请求释放连接，TPC四次挥手后释放连接</p>
+<p>证书派发和验证过程：<br>证书颁发机构（CA，Certificate Authority），客户端和服务端都信任CA<br>(1).CA知道服务端的公钥，它先对这个公钥hash生成摘要，再使用自己的私钥对此摘要签名，并将签名附在证书中派发给服务端<br>(2).服务端保存证书，等待客户端请求，发送自己的公钥和证书给客户端<br>(3).客户端收到服务端的公钥和证书，客户端通过证书中的信息，找到对应CA，使用CA的公钥对证书中的签名验证得到摘要a，再对服务端的公钥进行hash得到摘要b，将摘要a和摘要b对比，若相等则表示身份正确。</p>
+<p>Https通讯过程：<br>(1).客户端请求连接，进行TCP三次握手后建立连接<br>(2).服务器把证书发送给客户端（证书是第三方机构派发给服务器的，其中有服务器公钥的签名等信息）<br>(3).客户端对证书进行验证，如果验证失败，则表示服务器不可信<br>(4).客户端从证书中取出服务器公钥，并使用这个公钥对自己的对称加密算法和对称密钥进行加密，发送给服务器<br>(5).服务器使用自己的私钥解密，得到对称加密算法和对称密钥<br>(6).双方使用相同的对称加密算法和对称密钥，对数据加密处理后再传输<br>(7).客户端请求释放连接，TPC四次挥手后释放连接</p>
 <p>4、没有证书会导致什么漏洞</p>
 <p>没有证书，客户端拿到公钥，但不能确定这个公钥是谁的，可能是攻击者用自己的公钥替换了服务端的公钥</p>
 <p>5、MySQL隔离级别，每个隔离级别详细说明</p>
@@ -384,6 +385,10 @@
 <p>4、并发访问时如何处理</p>
 <p>5、乐观锁和悲观锁了解吗（说了一下CAS乐观锁的实现）</p>
 <p>6、MySQL事务特性（脑抽忘了两个）</p>
+<p>原子性：要么做要么不做</p>
+<p>持久性：事务对数据库的影响是持久的</p>
+<p>独立性：不同事务之间不会相互影响</p>
+<p>一致性：数据的变化符合逻辑，符合“能量守恒定律”</p>
 <p>7、索引用来做什么，什么时候要用到索引，每个列都设置索引的话搜索速度是不是最快的？</p>
 <p>8、了解什么设计模式，单例模式实现</p>
 <p>9、volatile功能</p>
@@ -750,20 +755,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -804,12 +809,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">40k</span>
+    <span title="站点总字数">43k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:13</span>
+    <span title="站点阅读时长">1:18</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div><!-- 背景离子效果 -->
