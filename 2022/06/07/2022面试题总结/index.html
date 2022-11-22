@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="阿里、字节、美团面经">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022面试题总结">
+<meta property="og:url" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="随峰而动">
+<meta property="og:description" content="阿里、字节、美团面经">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-e367a5e3bc28fb7fd083ddc201e7e693_720w.png">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-5e2241fae8b593ff7f3b3a308ef81c10_720w.png">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3czNzI0MjYwOTY=,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/format,png.png">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/1647389426-lcjtXu-%E7%BD%91%E9%A1%B5%E6%8D%95%E8%8E%B7_16-3-2022_8728_codetop.cc.jpeg">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86-16595253339731.png">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/1620.png">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/webp.webp">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/980882-20200610112526160-1034412392.png">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/XA-first.jpg">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/XA-second.jpg">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-885daf4ba34102d6e1047b0b67910652_720w.jpg">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-90179fa933c0a389ffa6ac04e244a58f_720w.jpg">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/native-message.jpg">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-72ba7bed684e855606c44ddda185987d_720w.jpg">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/885859-20200508180615793-1149903775.png">
+<meta property="og:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/885859-20200508180602441-272857363.png">
+<meta property="article:published_time" content="2022-06-07T10:40:00.000Z">
+<meta property="article:modified_time" content="2022-11-22T07:57:42.023Z">
+<meta property="article:author" content="Herfrain">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-e367a5e3bc28fb7fd083ddc201e7e693_720w.png">
+
+<link rel="canonical" href="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>2022面试题总结 | 随峰而动</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="随峰而动" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">随峰而动</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Herfrain</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">11</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">8</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Herfrain">
+      <meta itemprop="description" content="记录美好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="随峰而动">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2022面试题总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-07 18:40:00" itemprop="dateCreated datePublished" datetime="2022-06-07T18:40:00+08:00">2022-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-22 15:57:42" itemprop="dateModified" datetime="2022-11-22T15:57:42+08:00">2022-11-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E7%BB%8F/" itemprop="url" rel="index"><span itemprop="name">面经</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>24k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>45 分钟</span>
+            </span>
+            <div class="post-description">阿里、字节、美团面经</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="2022面试题总结">1. 2022面试题总结</h1><h2 id="阿里密码算法岗">1.1. 阿里密码算法岗</h2><p>1、讲一讲你的项目</p>
+<p>2、你做的优化与其他人有什么优势？</p>
+<p>3、了解椭圆曲线和全同态吗？</p>
+<p>4、描述一下NTT和你们的T-NTT</p>
+<p>5、KEM如何转换成AKE</p>
+<h2 id="阿里云智能-ProtalDB">1.2. 阿里云智能-ProtalDB</h2><p>1、需求模糊，先考虑需求</p>
+<p>2、编程：外观数列</p>
+<p>3、Http和Https区别、Https通讯过程、传递什么数据</p>
+<p>Http：超文本传输协议，是无状态的，属于应用层协议，默认端口为80，以TCP的方式建立连接，传输的数据都是未经过加密的明文，容易受黑客监听和拦截</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-e367a5e3bc28fb7fd083ddc201e7e693_720w.png" class title="img">
+
+<p>Http通讯过程：<br>(1).客户端请求连接，进行TCP三次握手后建立连接<br>(2).传输数据（明文传输）<br>(3).客户端请求释放连接，TPC四次挥手后释放连接</p>
+<p>Https：Https &#x3D; Http + SSL&#x2F;TLS，是安全的超文本传输协议，默认端口为443，TLS是传输层安全协议</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-5e2241fae8b593ff7f3b3a308ef81c10_720w.png" class title="img">
+
+<p>证书派发和验证过程：<br>证书颁发机构（CA，Certificate Authority），客户端和服务端都信任CA<br>(1).CA知道服务端的公钥，它先对这个公钥hash生成摘要，再使用自己的私钥对此摘要签名，并将签名附在证书中派发给服务端<br>(2).服务端保存证书，等待客户端请求，发送自己的公钥和证书给客户端<br>(3).客户端收到服务端的公钥和证书，客户端通过证书中的信息，找到对应CA，使用CA的公钥对证书中的签名验证得到摘要a，再对服务端的公钥进行hash得到摘要b，将摘要a和摘要b对比，若相等则表示身份正确。</p>
+<p>Https通讯过程：<br>(1).客户端请求连接，进行TCP三次握手后建立连接<br>(2).服务器把证书发送给客户端（证书是第三方机构派发给服务器的，其中有服务器公钥的签名等信息）<br>(3).客户端对证书进行验证，如果验证失败，则表示服务器不可信<br>(4).客户端从证书中取出服务器公钥，并使用这个公钥对自己的对称加密算法和对称密钥进行加密，发送给服务器<br>(5).服务器使用自己的私钥解密，得到对称加密算法和对称密钥<br>(6).双方使用相同的对称加密算法和对称密钥，对数据加密处理后再传输<br>(7).客户端请求释放连接，TPC四次挥手后释放连接</p>
+<p>4、没有证书会导致什么漏洞</p>
+<p>没有证书，客户端拿到公钥，但不能确定这个公钥是谁的，可能是攻击者用自己的公钥替换了服务端的公钥</p>
+<p>5、MySQL隔离级别，每个隔离级别详细说明</p>
+<p>读未提交：事务可以读到未提交的更新。</p>
+<p>读已提交：事务可以读到已提交的更新。</p>
+<p>可重复读：无论其他事务是否有更新操作，本事务多次读取的数据是相同的，除非自己更新。</p>
+<p>串行化：事务之间是串行的，互不影响。</p>
+<p>6、MySQL的FIND_IN_SET()函数</p>
+<p>FIND_IN_SET(str, strList);</p>
+<ul>
+<li>str：要查找的字符串</li>
+<li>strList：从中搜索的以逗号分割的字符串列表</li>
+</ul>
+<h2 id="字节Tiktok-一面-3-x2F-24">1.3. 字节Tiktok 一面 3&#x2F;24</h2><p>1、项目用到的框架</p>
+<p>2、Mysql语句，按时间顺序查找</p>
+<p><code>SELECT userID, SUM(totalWeight) as weight_sum FROM order_recycle WHERE state = &#39;1&#39; GROUP BY userID HAVING weight_sum &gt;= 1000 ORDER BY orderDate</code></p>
+<p>3、having 和 where 的区别</p>
+<p>where 是分组前的条件筛选，having 是对 where 和 group by 分组后的数据再一次筛选5</p>
+<p>4、执行Mysql语句时顺序是怎么样的</p>
+<p><strong>书写顺序：</strong><br>select -&gt; distinct -&gt; from -&gt; join -&gt; on -&gt; where -&gt; group by -&gt; having -&gt; order by -&gt; limit<br>必须字段：select、from</p>
+<p><strong>执行顺序：</strong><br>from -&gt; on -&gt; join -&gt; where -&gt; group by -&gt; sum、count、max、avg -&gt; having -&gt; select -&gt; distinct -&gt; order by -&gt; limit</p>
+<p><strong>FORM</strong>: 对FROM的左表和右表计算笛卡尔积。产生虚表VT1</p>
+<p><strong>ON</strong>: 对虚表VT1进行ON筛选，只有那些符合的行才会被记录在虚表VT2中。</p>
+<p><strong>JOIN</strong>： 如果指定了OUTER JOIN（比如left join、 right join），那么保留表中未匹配的行就会作为外部行添加到虚拟表VT2中，产生虚拟表VT3, 如果 from 子句中包含两个以上的表的话，那么就会对上一个join连接产生的结果VT3和下一个表重复执行步骤1~3这三个步骤，一直到处理完所有的表为止。</p>
+<p><strong>WHERE</strong>： 对虚拟表VT3进行WHERE条件过滤。只有符合的记录才会被插入到虚拟表VT4中。</p>
+<p><strong>GROUP BY</strong>: 根据group by子句中的列，对VT4中的记录进行分组操作，产生VT5.</p>
+<p><strong>CUBE | ROLLUP</strong>: 对表VT5进行cube或者rollup操作，产生表VT6</p>
+<p><strong>HAVING</strong>： 对虚拟表VT6，即已经分组的数据进行过滤的条件，只有符合的记录才会被 插入到虚拟表VT7中</p>
+<p><strong>SELECT</strong>： 执行select操作，选择指定的列，插入到虚拟表VT8中</p>
+<p><strong>DISTINCT</strong>： 对VT8中的记录进行去重。产生虚拟表VT9</p>
+<p><strong>ORDER BY</strong>: 将虚拟表VT9中的记录按照进行排序操作，产生虚拟表VT10</p>
+<p><strong>LIMIT</strong>：取出指定行的记录，产生虚拟表VT11, 并将结果返回。</p>
+<p>5、怎么建索引</p>
+<p>对 <code>ON</code>、<code>WHERE</code>、<code>GROUP BY</code>、<code>HAVING</code>、<code>ORDER BY</code>的字段建立索引</p>
+<p>6、Mysql索引的数据结构</p>
+<p>7、线程安全的单例模式，为什么单例对象要用 <code>volatile</code>修饰？</p>
+<p><strong>双重校验</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 单例成员变量</span></span><br><span class="line">    <span class="comment">// volatile 防止JVM的指令重排</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton uniqueInstance;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 私有构造方法</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取单例对象</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getUniqueInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 先判断对象是否已经实例过，没有实例化过才进入加锁代码</span></span><br><span class="line">        <span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 类对象加锁</span></span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;</span><br><span class="line">                <span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    uniqueInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>new实例不是原子操作，实例初始化分三个步骤：<br>（1）分配内存空间<br>（2）初始化实例<br>（3）实例指向这个内存空间（此时才不为null）</p>
+<p>如果没有 <code>volatile</code>修饰，线程A来到18行，正在对实例进行初始化，但是初始化顺序为(1)-&gt;(3)-&gt;(2)，当线程A完成(1)-&gt;(3)步骤时，线程B进入，判断实例不为null，然后返回实例，但这个实例是没有初始化的（线程A还没完成步骤(2)），如果使用则会报错。所以使用 <code>volatile</code>是为了防止指令重排。</p>
+<p>单例模式的几种实现，以及各种实现的特点：</p>
+<table>
+<thead>
+<tr>
+<th align="left">单例模式的实现</th>
+<th>线程安全</th>
+<th>并发性能好</th>
+<th>延迟加载</th>
+<th>序列化&#x2F;反序列化</th>
+<th>能抵御反射攻击</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">饿汉式</td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">懒汉式</td>
+<td></td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">懒汉式（加锁）</td>
+<td>Y</td>
+<td></td>
+<td>Y</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">DCL（双重校验）</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">静态内部类</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">枚举</td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+</tbody></table>
+<p><strong>静态内部类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 静态内部类，类加载时不会初始化</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonHolder</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> uniqueInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取单例对象</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getUniqueInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SingletonHolder.uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>8、编程：最大正方形面积</p>
+<p>动态规划</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j] // 存储以[i,j]为右下角的最大正方形边长</span><br><span class="line">dp[i][j] = MIN&#123;dp[i-1][j-1], dp[i-1][j], dp[i][j-1]&#125; + 1, nums[i][j] == 1</span><br></pre></td></tr></table></figure>
+
+<h2 id="蚂蚁-支付宝-一面-3-x2F-29">1.4. 蚂蚁 支付宝 一面 3&#x2F;29</h2><p>1、项目，如何定时生成长期订单，如果生成的过程中出现异常怎么办</p>
+<p>2、密码是明文吗？MD5加密</p>
+<p>3、加密和签密的区别，对称加密和非对称加密，有什么了解的算法</p>
+<p>4、并发访问时如何处理</p>
+<p>5、乐观锁和悲观锁了解吗（说了一下CAS乐观锁的实现）</p>
+<p>6、MySQL事务特性（脑抽忘了两个）</p>
+<p>原子性：要么做要么不做</p>
+<p>持久性：事务对数据库的影响是持久的</p>
+<p>独立性：不同事务之间不会相互影响</p>
+<p>一致性：数据的变化符合逻辑，符合“能量守恒定律”</p>
+<p>7、索引用来做什么，什么时候要用到索引，每个列都设置索引的话搜索速度是不是最快的？</p>
+<p>8、了解什么设计模式，单例模式实现</p>
+<p>9、volatile功能</p>
+<p>10、算法题：两个队列模拟一个栈</p>
+<p>反问：</p>
+<p>1、工作地点在上海，线上办公</p>
+<p>2、主要做什么工作？</p>
+<p>支付宝的支付业务，商家码，二维码支付那些</p>
+<h2 id="字节-一面-3-x2F-31">1.5. 字节 一面 3&#x2F;31</h2><p>1、讲一下项目</p>
+<p>2、项目用了Redis，用来做什么？Redis和MySQL有什么区别？</p>
+<p>3、Redis和MySQL如何保证数据一致？</p>
+<p>读操作不会导致两者数据不一致：若读命中Redis缓存，则直接返回Redis中的数据；若没有命中，则从MySQL数据库中查询数据，并且放入缓存中，再返回查询的数据。读操作是可以保证数据一致的，他没有修改数据。</p>
+<p>写操作会导致两者数据不一致。写操作要更新缓存和数据库的内容，这引出两个问题：执行顺序问题和更新缓存的策略问题。</p>
+<p>更新缓存的策略：<br>（1）直接更新缓存：不会造成缓存失效，但如果要更新的数据较复杂，更新的开销较大，多线程更新时会导致与数据库数据不一致的情况（需要串行化执行来解决）<br>（2）直接淘汰缓存（推荐）：简单易操作，但会导致一次缓存失效</p>
+<p>执行顺序：（1）先淘汰缓存，在更新数据库；（2）先更新数据库，再淘汰缓存（这个方法更好）</p>
+<p>两个顺序都会导致问题，如果出现错误，都需要<strong>重试机制</strong>，保证执行完成</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/712285">如何保证缓存(redis)与数据库(MySQL)的一致性</a></p>
+</blockquote>
+<p>4、@Transaction是怎么实现事务的？</p>
+<p>Spring 框架中，事务管理相关最重要的 3 个接口如下：</p>
+<ul>
+<li><code>PlatformTransactionManager</code>： （平台）事务管理器，Spring 事务策略的核心。</li>
+<li><code>TransactionDefinition</code>： 事务定义信息（事务隔离级别、传播行为、超时、只读、回滚规则）。</li>
+<li><code>TransactionStatus</code>： 事务运行状态（是否是新事务，是否有恢复点，是否只回滚，是否已完成）。</li>
+</ul>
+<p>7种事务传播行为：</p>
+<ul>
+<li><code>Propagation.REQUIRED</code>（默认）：如果当前存在事务，则加入该事务；如果当前没有事务，则创建一个新的事务<ul>
+<li>如果外部方法没有开启事务的话，<code>REQUIRED</code>修饰的内部方法会新开启自己的事务，且开启的事务相互独立，互不干扰。</li>
+<li>如果外部方法开启事务并且被 <code>REQUIRED</code>的话，所有 <code>REQUIRED</code>修饰的内部方法和外部方法均属于同一事务 ，只要一个方法回滚，整个事务均回滚。</li>
+</ul>
+</li>
+<li><code>Propagation.REQUIRES_NEW</code>：创建一个新的事务，如果当前存在事务，则把当前事务挂起。</li>
+<li><code>Propagation.NESTED</code>：如果当前存在事务，就在<strong>嵌套</strong>事务内执行；如果当前没有事务，则创建一个新的事务。</li>
+<li><code>Propagation.MANDATORY</code>：如果当前存在事务，则加入该事务；如果当前没有事务，则抛出异常（mandatory，强制性）。</li>
+</ul>
+<p>以下事务传播行为不会回滚：</p>
+<ul>
+<li><code>Propagation.SUPPORTS</code>：如果当前存在事务，则加入该事务；如果当前没有事务，则以非事务的方式继续运行。</li>
+<li><code>Propagation.NOT_SUPPORTED</code>：以非事务方式运行，如果当前存在事务，则把当前事务挂起。</li>
+<li><code>Propagation.NEVER</code>：以非事务方式运行，如果当前存在事务，则抛出异常。</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://javaguide.cn/system-design/framework/spring/spring-transaction.html">Spring事务总结</a></p>
+</blockquote>
+<p>5、如果没有@Transaction注解，你自己怎么实现多并发安全？</p>
+<p>业务代码上，使用 <code>synchronized</code>或 <code>ReentrantLock</code>等锁机制，保证多线程下的并发安全</p>
+<p>数据库层面上，SQL语句使用事务实现操作的原子性。</p>
+<p>6、操作系统中，fork是什么，怎么实现的？</p>
+<p>fork 分叉，作用是克隆进程。父进程和克隆出来的子进程几乎没有区别，可以执行相同的操作，也可以根据传入的参数执行不同操作。</p>
+<p>fork() 有三种返回值：<br>（1）在父进程中，返回新创建的子进程的pid<br>（2）在子进程中，返回0<br>（3）出现错误，返回-1</p>
+<p>fork实现有两步：<br>（1）复制进程资源：进程pcb，程序体（代码段、数据段等），用户栈，内核栈，虚拟内存池，页表<br>（2）执行进程：将进程加入就绪队列，等待cpu调度</p>
+<p>7、虚拟内存如何实现？页面置换算法有哪些？</p>
+<p>8、HTTP和HTTPS的区别</p>
+<p>9、HTTPS如何抵挡中间人攻击？</p>
+<p>10、分布式锁了解吗，如何实现？</p>
+<p>线程锁：同一进程，多个线程并发访问共享资源，使用 <code>synchronized</code>或 <code>ReentrantLock</code>等线程锁进行互斥控制，同一时刻仅有一个线程执行该方法或该代码段。</p>
+<p>进程锁：为了控制同一操作系统中多个进程访问某个共享资源，因为进程具有独立性，各个进程无法访问其他进程的资源，因此无法通过 <code>synchronized</code>等线程锁实现进程锁。可以使用本地系统的信号量机制来控制。</p>
+<p>分布式锁：当多个进程不在同一个系统中，用分布式锁控制多个进程对资源的访问。</p>
+<p>分布式锁的三种实现方式：</p>
+<p>（1）数据库乐观锁：需要一个数据库，创建一个分布式锁表，加锁就增加一条记录，释放锁就将记录删除。</p>
+<p>乐观锁的实现：乐观锁一般通过 version 来实现，也就是在数据库表创建一个 version 字段，每次更新成功，则 version+1，读取数据时，我们将 version 字段一并读出，每次更新时将会对版本号进行比较，如果一致则执行此操作，否则更新失败！</p>
+<p>悲观锁的实现：利用数据库 <code>select ... for update</code>当前读语句，如果读结果为null则表示当前没有锁，则可以进去加锁；否则，不断循环重试。</p>
+<p>（2）基于ZooKeeper的分布式锁：ZooKeeper是一个分布式的，开放源码的分布式应用程序协调服务，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。</p>
+<ol>
+<li>建立一个节点，假如名为 lock 。节点类型为持久节点（Persistent）</li>
+<li>每当进程需要访问共享资源时，会调用分布式锁的 lock() 或 tryLock() 方法获得锁，这个时候会在第一步创建的 lock 节点下建立相应的顺序子节点，节点类型为临时顺序节点（<code>EPHEMERAL_SEQUENTIAL</code>），通过组成特定的名字 name+lock+顺序号。</li>
+<li>在建立子节点后，对 lock 下面的所有以 name 开头的子节点进行排序，判断刚刚建立的子节点顺序号是否是最小的节点，假如是最小节点，则获得该锁对资源进行访问。</li>
+<li>假如不是该节点，就获得该节点的上一顺序节点，并监测该节点是否存在注册监听事件。同时在这里阻塞。等待监听事件的发生，获得锁控制权。</li>
+<li>当调用完共享资源后，调用 unlock() 方法，关闭 ZooKeeper，进而可以引发监听事件，释放该锁。</li>
+</ol>
+<p>（3）基于Redis的分布式锁：需要一个Redis服务器来保存互斥的锁</p>
+<p>【1】利用 SETNX 和 SETEX</p>
+<ul>
+<li>SETNX(SET If Not Exists)：当且仅当 Key 不存在时，则可以设置，否则不做任何动作。</li>
+<li>SETEX：可以设置超时时间</li>
+</ul>
+<p>SETNX成功后 -&gt; 用SETEX设置超时时间 -&gt; 执行任务 -&gt; DELETE解锁</p>
+<p>SETNX失败 -&gt; 不断重试SETNX</p>
+<p>问题：SETNX和SETEX不是原子操作，如果在SETEX执行失败，没能设置超时时间，那么这个锁将无法释放</p>
+<p>解决：使用Lua脚本，将SETNX和SETEX写到一起</p>
+<p>【2】使用Redisson实现</p>
+<p>加锁Lua脚本</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3czNzI0MjYwOTY=,size_16,color_FFFFFF,t_70.png" class title="img">
+
+<p>解锁Lua脚本</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/format,png.png" class title="img">
+
+<p>11、编程题</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/1647389426-lcjtXu-%E7%BD%91%E9%A1%B5%E6%8D%95%E8%8E%B7_16-3-2022_8728_codetop.cc.jpeg" class title="网页捕获_16-3-2022_8728_codetop.cc.jpeg">
+
+<p>反问：</p>
+<p>1、部门是大力教育</p>
+<h2 id="字节-二面-4-x2F-2">1.6. 字节 二面 4&#x2F;2</h2><p>1、输入url到返回到客户端渲染页面，整个请求的过程说一下</p>
+<ol>
+<li>url域名-&gt;DNS解析-&gt;IP地址</li>
+<li>请求建立TCP连接（三次握手）</li>
+<li>客户端向该IP地址发送HTTP请求</li>
+<li>HTTP报文封装成TCP&#x2F;IP报文在路由器之间传递，路由器使用OSPF（Open Shortest Path First，开放最短路径优先协议）进行寻路</li>
+<li>当报文传递到目标服务器所在局域网的路由器后，路由器能直接查询到该IP地址，并用ARP（Address Resolution Protocol，地址解析协议）解析IP地址，得到机器的MAC地址</li>
+<li>交换机通过MAC地址来转发数据帧</li>
+<li>服务器接收到该帧，解封装成HTTP请求，然后再执行MVC的操作处理请求，返回HTTP响应</li>
+<li>HTTP响应经过相同流程传送回客户端，客户端浏览器渲染页面</li>
+<li>断开TCP连接</li>
+</ol>
+<p>2、MySQL事务特性（一致性到底是什么？没解释清楚）</p>
+<p>一致性，执行事务前后，数据应保证业务逻辑和客观显示上的一致</p>
+<p>3、一个事务中能否修改多个数据库的表？为什么不能？（母鸡）</p>
+<p>不能，因为一个事务只能对应一个数据库，如果要处理多个数据库，应该开启多个事务。</p>
+<p>4、多个线程更新多张表，能否放到一个事务中执行，为什么不能？（母鸡）</p>
+<p>如果开启一个事务，事务中更新同一个数据库的多张表，这是可以的</p>
+<p>多线程的情况下，每个线程都更新一张表，是不能整合到同一事务中的，他们必须各自开启事务</p>
+<p>5、执行exe文件到输出’hello’的过程（操作系统，系统调用）</p>
+<p>操作系统将exe二进制文件从外存拉入内存，CPU从内存中获取该文件的机器代码，将要输出的字节流’hello’存放到寄存器中，执行print的指令，进行系统调用，程序从用户态变成内核态，在内核态中系统调用输出设备，把’hello’字节流传入输出设备，输出设备再传递到显示设备，执行完毕后返回程序，程序继续执行后面的步骤。</p>
+<p>6、单例模式实现</p>
+<p>7、排序算法，以及各个时间复杂度，哪些是稳定的？</p>
+<table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>时间复杂度（最好，平均，最坏）</th>
+<th>空间复杂度</th>
+<th>是否稳定</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>直接插入排序</td>
+<td>$O(n), O(n^2), O(n^2)$</td>
+<td>$O(1)$</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>冒泡排序</td>
+<td>$O(n), O(n^2), O(n^2)$</td>
+<td>$O(1)$</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>简单选择排序</td>
+<td>$O(n^2), O(n^2), O(n^2)$</td>
+<td>$O(1)$</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td></td>
+<td>$O(1)$</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>$O(nlogn), O(nlogn), O(n^2)$</td>
+<td>$O(log_{2}n)$</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>$O(nlogn), O(nlogn), O(nlogn)$</td>
+<td>$O(1)$</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>2路归并排序</td>
+<td>$O(nlogn), O(nlogn), O(nlogn)$</td>
+<td>$O(n)$</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td>$O(d(n+r)), O(d(n+r)), O(d(n+r))$, <br>d是位数, n是排序数组长度, r是基数</td>
+<td>$O(r)$</td>
+<td>稳定</td>
+</tr>
+</tbody></table>
+<p>8、编程题：LFU（焯！）</p>
+<h2 id="字节-三面-4-x2F-6">1.7. 字节 三面 4&#x2F;6</h2><p>1、拿手的项目，项目技术上的难点</p>
+<p>2、谈谈你的研究方向，对你的影响，对未来职业的影响</p>
+<p>3、考了前两面答的不好的题目：事务一致性，HTTPS，执行exe的过程</p>
+<p>4、SSL证书是怎么申请的，CA再派发证书时，他们的分布式如何负载均衡？</p>
+<p>5、实习时长？</p>
+<p>6、使用过什么数据库，MySQL默认隔离级别是什么？</p>
+<p>7、MySQL的MVCC了解吗？</p>
+<p>8、编程题1：队列实现栈</p>
+<p>9、编程题2：求平方根</p>
+<h2 id="蚂蚁-二面-4-x2F-6">1.8. 蚂蚁 二面 4&#x2F;6</h2><p>1、操作系统，BIO，NIO，AIO，他们的使用场景是什么？</p>
+<p>BIO 同步阻塞，服务器实现模式一个连接一个线程，即客户端有连接请求时服务端就需要启动一个线程进行处理，如果这个连接不做任何事情，就会造成不必要的线程开销。适用于连接数目比较小且固定的结构。</p>
+<p>NIO 同步非阻塞，服务器实现模式一个请求一个线程，即客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到连接有 I&#x2F;O 请求时才启动一个线程处理。用户进程也需要时不时地询问IO操作是否就绪，这就要求用户进程不停的去询问。适用于连接数目多且连接比较短的架构，比如聊天服务器。</p>
+<p>NIO 异步阻塞，应用发起一个 IO 操作以后，不需要等待内核 IO 操作完成，等待内核完成 IO 操作以后会通知应用程序，通过 select 系统调用来完成的，而 select 函数本身的实现方式就是阻塞的。</p>
+<p>AIO 异步非阻塞，用户进程只需要发起一个IO操作便立即返回，等 IO 操作真正完成以后，应用程序会得到IO操作完成的通知。适用于连接数目多且连接比较长（重操作）的架构，比如相册服务器。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/726698">JAVA中BIO、NIO、AIO的分析理解</a></p>
+<p><a target="_blank" rel="noopener" href="https://javaguide.cn/java/io/io-model.html#aio-asynchronous-i-o">JAVA的IO模型</a></p>
+</blockquote>
+<p>2、Socket网络编程</p>
+<p>3、MySQL事务的实现</p>
+<p>MVCC 多版本控制</p>
+<p>4、项目中为什么不用多线程处理请求</p>
+<p>5、什么是线程安全，如何保证线程安全</p>
+<p>6、sychronized和ReentrantLock的区别，ReentrantLock如何唤醒线程</p>
+<p>sychronized和ReentrantLock都是悲观锁，一个线程获得锁之后，其他线程会阻塞</p>
+<p>7、线程池的结构</p>
+<p>ThreadPoolExecutor构造函数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">ThreadPoolExecutor</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">    <span class="keyword">int</span> corePoolSize,//线程池的核心线程数量</span></span></span><br><span class="line"><span class="params"><span class="function">    <span class="keyword">int</span> maximumPoolSize,//线程池的最大线程数</span></span></span><br><span class="line"><span class="params"><span class="function">    <span class="keyword">long</span> keepAliveTime,//当线程数大于核心线程数时，多余的空闲线程存活的最长时间</span></span></span><br><span class="line"><span class="params"><span class="function">    TimeUnit unit,//时间单位</span></span></span><br><span class="line"><span class="params"><span class="function">    BlockingQueue&lt;Runnable&gt; workQueue,//任务队列，用来储存等待执行任务的队列</span></span></span><br><span class="line"><span class="params"><span class="function">    ThreadFactory threadFactory,//线程工厂，用来创建线程，一般默认即可</span></span></span><br><span class="line"><span class="params"><span class="function">    RejectedExecutionHandler handler//拒绝策略，当提交的任务过多而不能及时处理时，我们可以定制策略来处理任务</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>execute方法流程</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86-16595253339731.png" class title="图解线程池实现原理">
+
+<p>8、单机项目如何提高并发（应该要回答多线程）</p>
+<p>9、项目中用过什么设计模式</p>
+<p>10、最近在学什么技术</p>
+<h2 id="美团-一面-4-x2F-12">1.9. 美团 一面 4&#x2F;12</h2><p>1、进程和线程的区别</p>
+<p>2、内存管理方法</p>
+<p>3、HashMap的key能否为null？</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Key能否为null</th>
+<th>Value能否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HashTable</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>ConcurrentHashMap</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>TreeMap</td>
+<td>N</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>HashMap</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+</tbody></table>
+<p>4、HashMap数据结构，如何解决冲突，如何获取哈希值</p>
+<p>5、除了链表法解决冲突，还有什么方法</p>
+<p>线性探测法</p>
+<p>6、JDK中有哪个类使用了线性探测法解决冲突</p>
+<p>ThreadLocalMap</p>
+<p>7、TCP三次握手，为什么不能两次</p>
+<p>8、Linux命令，查看进程，查看内存</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看进程</span></span><br><span class="line">ps -aux</span><br><span class="line">  -a 显示所有进程</span><br><span class="line">  -u 用户以及其他详细信息</span><br><span class="line">  -x 显示没有控制终端的进制</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 动态监视进程活动与系统负载</span></span><br><span class="line">top</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看内存</span></span><br><span class="line">free -h</span><br></pre></td></tr></table></figure>
+
+<p>9、sychronized如何实现？</p>
+<p>依赖于JVM的相关指令</p>
+<p>（1）修饰代码块：</p>
+<ul>
+<li>使用 <code>monitorenter</code>指令获取锁，判断锁的计数器是否为0，为0时，可以尝试获取锁，若不为0，则阻塞（获取对象锁失败则阻塞）。</li>
+<li>使用 <code>monitorexit</code>释放锁，判断本线程是否是锁的拥有者线程，若是，则将锁的计数器减1，直到为0时完全释放锁，若不是，则结束。</li>
+</ul>
+<p>（2）修饰方法：用 <code>ACC_SYNCHRONIZED</code>标识，表示该方法是同步的方法，JVM执行该方法时用同步调用。如果是实例方法，JVM 会尝试获取实例对象的锁。如果是静态方法，JVM 会尝试获取当前 class 的锁。</p>
+<p>10、sychronized上锁过程</p>
+<ul>
+<li>每个锁有一个计数器，当计数器为0时，表示没有线程使用这个锁，此时本线程可以上锁，把计数器改为1</li>
+<li>同一线程再次上锁，计数器会加1</li>
+<li>同一线程释放一次锁，计数器减1，直到为0完全释放该锁</li>
+<li>其他线程上锁时，如果看到计数器不为0，则会阻塞；当计数器为0时，他们争抢式上锁</li>
+</ul>
+<p>11、CAS操作</p>
+<p>12、Redis数据结构有哪些？</p>
+<p>13、Redis分布式锁如何实现？</p>
+<p>14、Redis过期的key如何处理？</p>
+<p>懒惰方式：每次查询的时候才检查是否过期</p>
+<p>定时方式：每隔一段时间删除过期key</p>
+<p>15、线程池</p>
+<p>16、根据什么配置线程池的线程数量？</p>
+<ul>
+<li><strong>CPU 密集型任务(N+1)：</strong> 这种任务消耗的主要是 CPU 资源，可以将线程数设置为 N（CPU 核心数）+1，比 CPU 核心数多出来的一个线程是为了防止线程偶发的缺页中断，或者其它原因导致的任务暂停而带来的影响。一旦任务暂停，CPU 就会处于空闲状态，而在这种情况下多出来的一个线程就可以充分利用 CPU 的空闲时间。</li>
+<li><strong>I&#x2F;O 密集型任务(2N)：</strong> 这种任务应用起来，系统会用大部分的时间来处理 I&#x2F;O 交互，而线程在处理 I&#x2F;O 的时间段内不会占用 CPU 来处理，这时就可以将 CPU 交出给其它线程使用。因此在 I&#x2F;O 密集型任务的应用中，我们可以多配置一些线程，具体的计算方法是 2N。</li>
+</ul>
+<p>17、线程池工作过程</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png" class title="图解线程池实现原理">
+
+<p>18、ThreadLocal实现原理</p>
+<p><a target="_blank" rel="noopener" href="https://javaguide.cn/java/concurrent/threadlocal.html#threadlocal%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">ThreadLocal详解</a></p>
+<p>19、SpringBoot的AutoConfig如何实现？SPI了解吗？</p>
+<p><strong>自动装配</strong>：用户只需要引入对应jar包，Spring会扫描对应的 <code>spring.factories</code>文件，自动加载里面的模块。</p>
+<p><code>@SpringBootApplication</code>中包括三个关键注解 <code>@Configuration</code>、<code>@EnableAutoConfiguration</code>、<code>@ComponentScan</code></p>
+<ul>
+<li><code>@EnableAutoConfiguration</code>：启用 SpringBoot 的自动配置机制</li>
+<li><code>@Configuration</code>：允许在上下文中注册额外的 bean 或导入其他配置类</li>
+<li><code>@ComponentScan</code>： 扫描被 <code>@Component</code> (<code>@Service</code>,<code>@Controller</code>)注解的 bean，注解默认会扫描启动类所在的包下所有的类，可以自定义不扫描某些 bean。</li>
+</ul>
+<p><code>@EnableAutoConfiguration</code>通过 <code>AutoConfigurationImportSelector</code>类来实现自动装配功能，<code>AutoConfigurationImportSelector</code>实现了 <code>ImportSelector</code>接口的 <code>selectImports</code>方法，该方法的功能是<strong>获取所有符合条件的类的全限定类名，这些类需要被加载到 IoC 容器中</strong>（根据 <code>ConditionOnXXX</code>条件，调用 <code>SpringFactoriesLoader </code>类，加载 <code>META-INF/spring.factories</code>的配置类到IoC容器中）</p>
+<p><strong>SPI</strong>：Service Provider Interface，一种<strong>服务提供发现机制</strong>，运用了面向接口编程的思想，作用是为被扩展的API寻找服务实现。</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/1620.png" class title="img">
+
+<blockquote>
+<p>SpringBoot 定义了一套接口规范，这套规范规定：SpringBoot 在启动时会扫描外部引用 jar 包中的 <code>META-INF/spring.factories</code>文件，将文件中配置的类型信息加载到 Spring 容器（此处涉及到 JVM 类加载机制与 Spring 的容器知识），并执行类中定义的各种操作。对于外部 jar 来说，只需要按照 SpringBoot 定义的标准，就能将自己的功能装置进 SpringBoot。</p>
+</blockquote>
+<p>20、SpringBoot的注入是byType还是byName？</p>
+<p>byType：根据<strong>变量类型</strong>注入，当有多个实现类，则会报错</p>
+<p>byName：根据<strong>变量名</strong>注入</p>
+<p><code>@Autowired</code>先通过byType方式注入，若检测到有多个实现类，则根据变量名byName注入（如变量名为numberServiceImp，它默认查找NumberServiceImp类），若找不到与变量名相同的实现类则报错。也可以用 <code>@Qulifier(&quot;xxx&quot;)</code>指定特定实现类注入（里面的名字要与 <code>@Service(&quot;xxx&quot;)</code>相同）。</p>
+<p>21、&#x3D;&#x3D;与equals的区别</p>
+<p>22、协程了解吗？</p>
+<p>协程（Coroutines）是一种比线程更加轻量级的存在。协程完全由程序所控制（在用户态执行），带来的好处是性能大幅度的提升。一个线程可以有多个协程。协程是一个特殊的函数，这个函数可以在某个地方挂起，并且可以重新在挂起处继续运行。</p>
+<p><strong>一个线程内的多个协程的运行是串行的</strong>，这点和多进程（多线程）在多核CPU上执行时是不同的。 多进程（多线程）在多核CPU上是可以并行的。<strong>当线程内的某一个协程运行时，其它协程必须挂起。</strong></p>
+<p>优点：协程切换在线程内完成，无需系统内核的上下文切换，开销小；无需原子操作锁定及同步的开销，不用担心资源共享的问题；单核 CPU 即便支持上万的协程</p>
+<p>缺点：无法使用CPU的多核；在协程中不能调用导致线程阻塞的操作。也就是说，协程只有和异步IO结合起来，才能发挥最大的威力。</p>
+<p>协程的使用：</p>
+<ul>
+<li>计算型的操作，利用协程来回切换执行，没有任何意义，来回切换并保存状态 反倒会降低性能。</li>
+<li>IO型的操作，利用协程在IO等待时间就去切换执行其他任务，当IO操作结束后再自动回调，那么就会大大节省资源并提供性能，从而实现异步编程（不等待任务结束就可以去执行其他代码）。</li>
+</ul>
+<p>23、编程：判断有向图中是否存在环</p>
+<h2 id="美团-二面-4-x2F-15">1.10. 美团 二面 4&#x2F;15</h2><p>1、未来职业规划</p>
+<p>2、编程：非递归中序遍历</p>
+<p>3、编程：n个数中有1个唯一的数，其他数都出现2次</p>
+<p>4、编程：n个数中有1个唯一的数，其他数都出现3次</p>
+<p>5、编程：n个数中有2个不相同的数，其他数都出现2次，求这2个数</p>
+<p>6、编程：n个螺母，n个螺帽，都是乱序，只能比较螺母和螺帽，求匹配的螺母和螺帽（快排思想）</p>
+<h2 id="南方基金-一面-7-x2F-28">1.11. 南方基金 一面 7&#x2F;28</h2><p>1、10w个长度为10的不相同的字符串，添加一个新的字符串，如何判重？</p>
+<p>可以用一个Set集合存所有字符串</p>
+<p>2、如果用Set存放这10w个字符串，存储空间如何计算？</p>
+<p>3、100亿个不定长的不相同的字符串，添加一个新的字符串，如何判重？</p>
+<p>布隆过滤器</p>
+<h2 id="字节互娱-一面-8-x2F-5">1.12. 字节互娱 一面 8&#x2F;5</h2><p>1、项目使用的框架如何选型，学习新技术的过程</p>
+<p>2、项目需求开发过程</p>
+<p>3、项目遇到困难怎么解决</p>
+<p>4、分析型数据库？</p>
+<p><strong>OLAP</strong>（On-Line Analytical Processing）：联机分析处理，OLAP是数据仓库系统的主要应用，支持复杂的分析操作，侧重决策支持，并且提供直观易懂的查询结果。典型的应用就是复杂的<strong>动态报表系统</strong>。</p>
+<p>OLTP（on-line transaction processing）：联机事务处理，传统的关系型数据库的主要应用，主要是基本的、日常的事务处理，记录即时的增、删、改、查。</p>
+<table>
+<thead>
+<tr>
+<th>不同点</th>
+<th>OLTP</th>
+<th>OLAP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户</td>
+<td>操作人员，底层管理人员</td>
+<td>决策人员，高级管理人员</td>
+</tr>
+<tr>
+<td>功能</td>
+<td>日常操作处理</td>
+<td>分析决策</td>
+</tr>
+<tr>
+<td>DB设计</td>
+<td>面向应用</td>
+<td>面向主题</td>
+</tr>
+<tr>
+<td>数据</td>
+<td>当前，最新，细节，二维，分立，100MB-GB</td>
+<td>历史，聚集，多维，集成，统一，100GB-TB</td>
+</tr>
+<tr>
+<td>存取</td>
+<td>读&#x2F;写数十条数据</td>
+<td>读百万条数据</td>
+</tr>
+<tr>
+<td>工作单位</td>
+<td>简单的事务</td>
+<td>复杂的查询</td>
+</tr>
+<tr>
+<td>用户数</td>
+<td>上千</td>
+<td>上百万</td>
+</tr>
+<tr>
+<td>时间要求</td>
+<td>实时性</td>
+<td>对时间要求不严格</td>
+</tr>
+<tr>
+<td>主要应用</td>
+<td>数据库</td>
+<td>数据仓库</td>
+</tr>
+</tbody></table>
+<p>6、HTTP和RPC的区别</p>
+<p><strong>HTTP</strong>：超文本传输协议，请求-响应协议，基于TCP，规定了客户端和服务端之间的通信格式</p>
+<p>请求报文格式：请求行 － 通用信息头 － 请求头 － 实体头 － 报文主体</p>
+<p>响应报文格式：状态行 － 通用信息头 － 响应头 － 实体头 － 报文主体</p>
+<p>缺点：主要是效率低、封装调用复杂。当存在大量的服务间调用时，这些缺点变得更为突出。</p>
+<p><strong>RPC</strong>：远程过程调用（与之相对的是本地调用），即调用的方法不是本地实现的方法，是其他微服务实现的方法，但是使用方式却像本地调用一样简单。RPC通信可以使用HTTP协议，也可以TCP协议，也可以是自定义的协议。</p>
+<p>相较于HTTP，PRC封装了服务发现、负载均衡、熔断降级等面向服务的高级特性。当使用自定义协议通信时，效率上也会更快。</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/webp.webp" class title="img">
+
+<p>PRC调用过程，调用方可以像调用内部接口一样调用远程的方法，而不用封装参数名和参数值等操作。</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/980882-20200610112526160-1034412392.png" class title="img">
+
+<p>7、TCP和UDP区别？TCP有什么优势？</p>
+<p>8、进程与线程的区别，进程的通信方式，线程的通信方式</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>进程</th>
+<th>线程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>调度</td>
+<td></td>
+<td>CPU调度的基本单位</td>
+</tr>
+<tr>
+<td>资源</td>
+<td>拥有资源的基本单位</td>
+<td>本身含少量资源，共享同一进程的资源</td>
+</tr>
+<tr>
+<td>开销</td>
+<td>进程切换开销较大</td>
+<td>线程切换开销较小</td>
+</tr>
+<tr>
+<td>通信</td>
+<td>共享存储，消息传递，管道通信</td>
+<td>volatile，wait&#x2F;notify，join，管道输入&#x2F;输出</td>
+</tr>
+</tbody></table>
+<p>9、线程状态，什么情况会阻塞？</p>
+<p>10、Spring理解，IOC，AOP</p>
+<p>11、Spring的设计模式有哪些？</p>
+<p>（1）<strong>工厂模式</strong></p>
+<p><code>BeanFactory</code>：延迟注入(使用到某个 bean 的时候才会注入),相比于<code>ApplicationContext</code> 来说会占用更少的内存，程序启动速度更快。</p>
+<p><code>ApplicationContext</code>：容器启动的时候，一次性创建所有 bean 。扩展了<code>BeanFactory</code>的功能，有其他额外功能。</p>
+<ul>
+<li><code>ClassPathXmlApplication</code>：把上下文文件当成类路径资源。</li>
+<li><code>FileSystemXmlApplication</code>：从文件系统中的 XML 文件载入上下文定义信息。</li>
+<li><code>XmlWebApplicationContext</code>：从Web系统中的 XML 文件载入上下文定义信息。</li>
+</ul>
+<p>（2）<strong>单例模式</strong>：Spring 中 bean 的默认作用域就是 singleton(单例)</p>
+<p>（3）<strong>代理模式</strong>：Spring AOP（面向切面编程），两种实现方式，JDK Proxy和CGLib Proxy</p>
+<p>（4）<strong>模板模式</strong>：使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤的实现方式。</p>
+<p>Spring中的<code>jdbcTemplate</code>和<code>hibernateTemplate</code>等以 Template 结尾的对数据库操作的类都用到了模板模式。</p>
+<p>（5）<strong>观察者模式</strong>：表示的是一种对象与对象之间具有依赖关系，当一个对象发生改变的时候，这个对象所依赖的对象也会做出反应。</p>
+<p>Spring 事件驱动模型</p>
+<p>（6）<strong>适配器模式</strong>：将一个接口转换成客户希望的另一个接口，通过适配器可以兼容接口不同的类</p>
+<p>Spring AOP 的增强或通知(Advice) <code>AdvisorAdapter</code> </p>
+<p>Spring MVC 中的<code>HandlerAdapter</code></p>
+<p>（7）<strong>装饰者模式</strong>：动态地给对象添加一些额外的属性或行为</p>
+<p><code>InputStream</code>家族，<code>InputStream</code> 类下有 <code>FileInputStream</code> (读取文件)、<code>BufferedInputStream</code> (增加缓存,使读取文件速度大大提升)等子类都在不修改<code>InputStream</code> 代码的情况下扩展了它的功能。</p>
+<p>12、反向代理</p>
+<p>直接访问：用户直接与web服务器交互，没有经过代理服务器</p>
+<p>​	路径：用户浏览器&lt;–&gt;web服务器</p>
+<p>正向代理：用户通过一个代理服务器（可以理解为一个请求中转站）与web服务器交互，用户需要主动配置代理服务器地址</p>
+<p>​	路径：【用户浏览器&lt;–&gt;正向代理服务器】&lt;–&gt;web服务器</p>
+<p>​	作用：隐藏用户信息，直接访问失效时可以通过代理来访问，安全审查（可以监管用户的浏览信息）</p>
+<p>反向代理：负责转发用户的请求到对应web服务器，是web服务器的代理，用户把反向代理服务器当作web服务器</p>
+<p>​	路径：用户浏览器&lt;–&gt;【反向代理服务器&lt;–&gt;web服务器】</p>
+<p>​	作用：隐藏服务器信息，负载均衡（用合适的方法分配请求给不同进程或服务器，减少单个进程或服务器的压力），缓存，</p>
+<p>13、Mysql事务，四大特性ACID</p>
+<p>14、事务传播，什么时候会用到？</p>
+<p>嵌套事务的时候，事务之间会有事务传播</p>
+<p>15、Mysql如何使用命中索引加快查询，为什么索引可以加快order by排序？</p>
+<p>16、使用过explain查看select语句是否命中索引吗？</p>
+<p>explain，提供有关 MySQL 如何执行语句的信息</p>
+<p>explain + select&#x2F;delete&#x2F;insert&#x2F;update&#x2F;replace语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">explain select * from order_recycle;</span><br><span class="line">+----+-------------+---------------+------------+------+---------------+------+---------+------+------+----------+-------+</span><br><span class="line">| id | select_type | table         | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra |</span><br><span class="line">+----+-------------+---------------+------------+------+---------------+------+---------+------+------+----------+-------+</span><br><span class="line">|  1 | SIMPLE      | order_recycle | NULL       | ALL  | NULL          | NULL | NULL    | NULL | 6426 |   100.00 | NULL  |</span><br><span class="line">+----+-------------+---------------+------------+------+---------------+------+---------+------+------+----------+-------+</span><br><span class="line"></span><br><span class="line">explain SELECT 1, 2 UNION SELECT &#x27;a&#x27;, &#x27;b&#x27;;</span><br><span class="line">+----+--------------+------------+------------+------+---------------+------+---------+------+------+----------+-----------------+</span><br><span class="line">| id | select_type  | table      | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra           |</span><br><span class="line">+----+--------------+------------+------------+------+---------------+------+---------+------+------+----------+-----------------+</span><br><span class="line">|  1 | PRIMARY      | NULL       | NULL       | NULL | NULL          | NULL | NULL    | NULL | NULL |     NULL | No tables used  |</span><br><span class="line">|  2 | UNION        | NULL       | NULL       | NULL | NULL          | NULL | NULL    | NULL | NULL |     NULL | No tables used  |</span><br><span class="line">| NULL | UNION RESULT | &lt;union1,2&gt; | NULL       | ALL  | NULL          | NULL | NULL    | NULL | NULL |     NULL | Using temporary |</span><br><span class="line">+----+--------------+------------+------------+------+---------------+------+---------+------+------+----------+-----------------+</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">列名</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_id">id</a></td>
+<td align="left">序号</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_select_type">select_type</a></td>
+<td align="left">查询类型</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_table">table</a></td>
+<td align="left">查询的表名</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_partitions">partitions</a></td>
+<td align="left">匹配的分区（查询基于分区表，显示查询将访问的分区）</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_type">type</a></td>
+<td align="left">关联类型，显示表如何连接</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_possible_keys">possible_keys</a></td>
+<td align="left">可能选择的索引</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_key">key</a></td>
+<td align="left">实际选择的索引</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_key_len">key_len</a></td>
+<td align="left">选择的索引的长度（字节）</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_ref">ref</a></td>
+<td align="left">用来与索引比较的列或常量（const，func表示使用的是函数的结果，NULL，字段名）</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_rows">rows</a></td>
+<td align="left">估计要查询的行数</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_filtered">filtered</a></td>
+<td align="left">根据表条件过滤的行数百分比</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html#explain_extra">Extra</a></td>
+<td align="left">额外信息</td>
+</tr>
+</tbody></table>
+<p><strong>select_type</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">SIMPLE</td>
+<td align="left">简单SELECT（没有使用UNION或subqueries子查询）</td>
+</tr>
+<tr>
+<td align="left">PRIMARY</td>
+<td align="left">最外层的SELECT</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/union.html">UNION</a></td>
+<td align="left">UNION中的第二个或后面的SELECT</td>
+</tr>
+<tr>
+<td align="left">DEPENDENT UNION</td>
+<td align="left">UNION中的第二个或后面的SELECT，依赖于外层查询</td>
+</tr>
+<tr>
+<td align="left">UNION RESULT</td>
+<td align="left">UNION的结果</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/optimizer-hints.html#optimizer-hints-subquery">SUBQUERY</a></td>
+<td align="left">子查询，SELECT中的第一个子查询</td>
+</tr>
+<tr>
+<td align="left">DEPENDENT SUBQUERY</td>
+<td align="left">依赖子查询，SELECT中的第一个子查询，依赖外层查询</td>
+</tr>
+<tr>
+<td align="left">DERIVED</td>
+<td align="left">FROM中的子查询（派生表）</td>
+</tr>
+<tr>
+<td align="left">DEPENDENT DERIVED</td>
+<td align="left">依赖于其他表的派生表</td>
+</tr>
+<tr>
+<td align="left">MATERIALIZED</td>
+<td align="left">具体化子查询</td>
+</tr>
+<tr>
+<td align="left">UNCACHEABLE SUBQUERY</td>
+<td align="left">无缓存的子查询，该子查询结果不能缓存，并且必须为外部查询的每一行重新计算</td>
+</tr>
+<tr>
+<td align="left">UNCACHEABLE UNION</td>
+<td align="left">UNION中的第二个或后面的SELECT，该SELECT属于一个无缓存子查询 （见<code>UNCACHEABLE SUBQUERY</code>）</td>
+</tr>
+</tbody></table>
+<p><strong>table</strong></p>
+<ul>
+<li>&lt;unionM,N&gt;：id为M和N的查询的union</li>
+<li>&lt;derivedN&gt;：当前查询依赖于id为N的查询</li>
+<li>&lt;subqueryN&gt;：当前查询依赖于id为N的具体化子查询</li>
+</ul>
+<p><strong>type</strong></p>
+<ul>
+<li><p>system：只有一行的表</p>
+</li>
+<li><p>const：最多匹配一行，当PRIMARY KEY或UNIQUE索引与常量值进行比较时</p>
+<ul>
+<li><p>&#96;&#96;&#96;mysql<br>SELECT * FROM tbl_name WHERE primary_key&#x3D;1;</p>
+<p>SELECT * FROM tbl_name<br>  WHERE primary_key_part1&#x3D;1 AND primary_key_part2&#x3D;2;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- eq_ref：最多只匹配一行，PRIMARY KEY或UNIQUE非空索引的所有部分都被join使用 ，索引使用等号=匹配</span><br><span class="line"></span><br><span class="line">  - ```mysql</span><br><span class="line">    SELECT * FROM ref_table,other_table</span><br><span class="line">      WHERE ref_table.key_column=other_table.column;</span><br><span class="line">    </span><br><span class="line">    SELECT * FROM ref_table,other_table</span><br><span class="line">      WHERE ref_table.key_column_part1=other_table.column</span><br><span class="line">      AND ref_table.key_column_part2=1;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>ref：可匹配多行，join只使用普通索引的部分前缀，或者key不是PRIMARY KEY或UNIQUE索引（即可能匹配多行）</p>
+</li>
+<li><p>fulltext：join使用FULLTEXT索引</p>
+</li>
+<li><p>ref_or_null：与ref相似，但允许值为null</p>
+</li>
+<li><p>index_merge：索引合并优化</p>
+</li>
+<li><p>unique_subquery：使用IN子查询时，代替eq_ref</p>
+<ul>
+<li>&#96;&#96;&#96;mysql<br>value IN (SELECT primary_key FROM single_table WHERE some_expr)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- index_subquery：与unique_subquery相似，但子查询的列不是主键或唯一索引</span><br><span class="line"></span><br><span class="line">  - ```mysql</span><br><span class="line">    value IN (SELECT key_column FROM single_table WHERE some_expr)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>range：使用索引选择行，只检索给定范围内的行，当值与常数进行比较操作时使用（&#x3D;, &lt;&gt;, &gt;, &gt;&#x3D;, &lt;, &lt;&#x3D;, IS NULL, &lt;&#x3D;&gt;, BETWEEN, LIKE, or IN()）</p>
+</li>
+<li><p>index：与ALL相似，不同点在于索引树是否被扫描，有以下两种方式：</p>
+<ul>
+<li>如果索引是覆盖索引，而且能匹配所有需要的数据，那么只有索引树被扫描，Extra中显示Using index，通常比ALL快</li>
+<li>执行全表扫描，使用从索引读取数据，按索引顺序查找数据行。Extra中不显示Using index</li>
+</ul>
+</li>
+<li><p>ALL：全表扫描，通常可以添加索引来优化</p>
+</li>
+</ul>
+<p>17、<strong>分布式事务</strong>：分布式事务是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。</p>
+<p><strong>一致性</strong></p>
+<ul>
+<li>强一致性：任何一次读都能读到某个数据的最新数据，在任意时刻，所有节点中的数据是一样的</li>
+<li>弱一致性：数据更新后，能容忍后续的访问只能访问到部分或者全部访问不到</li>
+<li>最终一致性：不保证任意时刻所有节点数据都一致，但在一段时间后，节点间的数据会最终达到一致状态</li>
+</ul>
+<p><strong>CAP原则</strong>：在一个分布式系统中， Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者不可得兼。</p>
+<p><strong>BASE理论</strong>：Basically Available Soft State Eventual Consistency</p>
+<ul>
+<li>BA：Basically Available 基本可用，分布式系统在出现故障的时候，允许损失部分可用性，即保证核心可用。</li>
+<li>S：Soft State 软状态，允许系统存在中间状态，而该中间状态不会影响系统整体可用性。</li>
+<li>E：Consistency 最终一致性，系统中的所有数据副本经过一定时间后，最终能够达到一致的状态。</li>
+<li>BASE 理论本质上是对 CAP 理论的延伸，是对 CAP 中 AP 方案的一个补充。</li>
+</ul>
+<p><strong>分布式事务解决方案</strong></p>
+<p><strong>2PC</strong>：两阶段提交，准备阶段-提交阶段</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/XA-first.jpg" class title="img">
+
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/XA-second.jpg" class title="img">
+
+<p><strong>3PC</strong>：准备阶段-预提交阶段-提交阶段</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-885daf4ba34102d6e1047b0b67910652_720w.jpg" class title="img">
+
+<p><strong>TCC</strong>（Try-Confirm-Cancel）：尝试-确认-取消，可以跨数据库、跨不同的业务系统来实现事务。</p>
+<ul>
+<li>Try：尝试执行，完成所有业务检查（一致性）, 预留必须业务资源（准隔离性）</li>
+<li>Confirm：确认执行真正执行业务，不作任何业务检查，只使用 Try 阶段预留的业务资源，Confirm 操作满足幂等性。要求具备幂等设计，Confirm 失败后需要进行重试。</li>
+<li>Cancel：取消执行，释放 Try 阶段预留的业务资源，Cancel 操作满足幂等性，Cancel 阶段的异常和 Confirm 阶段异常处理方案基本上一致。</li>
+</ul>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-90179fa933c0a389ffa6ac04e244a58f_720w.jpg" class title="img">
+
+<p><strong>本地消息表</strong>：将需要分布式处理的任务通过消息日志的方式来异步执行，利用各系统本地事务来实现分布式事务。假设系统 A 是消息生产者，系统 B 是消息消费者，大致流程如下：</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/native-message.jpg" class title="img">
+
+<ol>
+<li>当系统 A 被其他系统调用发生数据库表更新操作，首先会更新数据库的业务表，其次会往相同数据库的消息表中插入一条数据，两个操作发生在同一个事务中（保证业务和消息是同步的）</li>
+<li>系统 A 的脚本定期轮询本地消息往 MQ 中写入一条消息，如果消息发送失败会进行重试</li>
+<li>系统 B 消费 MQ  中的消息，并处理业务逻辑。如果本地事务处理失败，会在继续消费 MQ 中的消息进行重试，如果业务上的失败，可以通知系统 A 进行回滚操作</li>
+</ol>
+<p><strong>消息事务</strong>：不使用本地消息表，直接对消息队列中间件操作，阿里的RocketMQ支持消息事务</p>
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/v2-72ba7bed684e855606c44ddda185987d_720w.jpg" class title="img">
+
+<p>RocketMQ 的发送方会提供一个<strong>反查事务状态接口</strong>，如果一段时间内半消息没有收到任何操作请求，那么 Broker 会通过反查接口得知发送方事务是否执行成功，然后执行 Commit 或者 RollBack 命令。</p>
+<p><strong>最大努力通知</strong>：最大努力通知是最简单的一种柔性事务，适用于一些最终一致性时间敏感度低的业务，且被动方处理结果不影响主动方的处理结果。</p>
+<ol>
+<li>系统 A 本地事务执行完之后，发送个消息到 MQ；</li>
+<li>这里会有个专门消费 MQ 的服务，这个服务会消费 MQ 并调用系统 B 的接口；</li>
+<li>要是系统 B 执行成功就 ok 了；要是系统 B 执行失败了，那么最大努力通知服务就定时尝试重新调用系统 B, 反复 N 次，最后还是不行就放弃。</li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://xiaomi-info.github.io/2020/01/02/distributed-transaction/">https://xiaomi-info.github.io/2020/01/02/distributed-transaction/</a></p>
+</blockquote>
+<p>18、堆（优先队列）的特点</p>
+<p>堆顶是整个树的最大值或最小值，每个子树的根节点也是子树的最大值或最小值</p>
+<p>19、MyBatis理解，ORM？</p>
+<p>MyBatis是ORM（Object Relational Mapping，对象 - 关系映射）框架，主要是根据类和数据库表之间的映射关系，帮助程序员自动实现对象与数据库中数据之间的互相转化。</p>
+<p>20、BIO，NIO</p>
+<p>编程：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-substring-without-repeating-characters">3. 无重复字符的最长子串</a></p>
+<h2 id="美团打车-一面-8-x2F-19">1.13. 美团打车 一面 8&#x2F;19</h2><p>1、Bean注入的方式</p>
+<p>（1）构造器注入</p>
+<p>（2）set注入</p>
+<p>（3）</p>
+<p>2、ThreadLocal使用的场景</p>
+<p>（1）代替参数的显式传递：将参数存储在ThreadLocal中，Service的方法就不需要传参</p>
+<p>（2）全局存储用户信息：每个连接是一个线程，每个线程可以存自己的用户信息，在这个线程运行期间，直接从ThreadLocal中获取</p>
+<p>（3）解决线程安全问题：数据库连接中利用了ThreadLocal，每一个请求线程都保存有一份自己的Connection</p>
+<p>3、Redis持久化机制</p>
+<p>目的：将内存中的数据写入硬存，断电之后数据还能保存，用于数据恢复或备份</p>
+<p><strong>快照（RDB）</strong>，默认方式</p>
+<p>Redis 可以通过创建快照来获得存储在内存里面的数据在某个时间点上的副本。一段时间内，如果有一定数量的key发生变化，就会启动快照方式保存数据。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">save 900 1           #在900秒(15分钟)之后，如果至少有1个key发生变化，Redis就会自动触发BGSAVE命令创建快照。</span><br><span class="line"></span><br><span class="line">save 300 10          #在300秒(5分钟)之后，如果至少有10个key发生变化，Redis就会自动触发BGSAVE命令创建快照。</span><br><span class="line"></span><br><span class="line">save 60 10000        #在60秒(1分钟)之后，如果至少有10000个key发生变化，Redis就会自动触发BGSAVE命令创建快照。</span><br></pre></td></tr></table></figure>
+
+<p><strong>追加文件（append-only file, AOF）</strong></p>
+<p>每执行一条会更改 Redis 中的数据的命令，Redis 就会将该命令写入到内存缓存 <code>server.aof_buf</code> 中，然后再根据 <code>appendfsync</code> 配置来决定何时将其同步到硬盘中的 AOF 文件。</p>
+<p>Redis 的配置文件中的 AOF 持久化方式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">appendfsync always    #每次有数据修改发生时都会写入AOF文件,这样会严重降低Redis的速度</span><br><span class="line">appendfsync everysec  #每秒钟同步一次，显式地将多个写命令同步到硬盘</span><br><span class="line">appendfsync no        #让操作系统决定何时进行同步</span><br></pre></td></tr></table></figure>
+
+<p>4、用户不断发请求，这个请求不在缓存中，也不在数据库中，如何避免数据库负载？</p>
+<p>（1）缓存无效key：如果不在数据库中，则添加一个缓存，缓存里面的值是错误信息，之后用户就可以直接从缓存返回，不会查询数据库</p>
+<p>（2）布隆过滤器：把所有可能存在的请求的值都存放在布隆过滤器中，当用户请求过来，先判断用户发来的请求的值是否存在于布隆过滤器中。不存在的话，直接返回请求参数错误信息给客户端，存在的话才会走查缓存和数据库的流程。</p>
+<p><strong>布隆过滤器说某个元素存在，小概率会误判。布隆过滤器说某个元素不在，那么这个元素一定不在。</strong></p>
+<p>5、当类之间有相互依赖时，Spring如何注入Bean，比如类A依赖类B，类B依赖类A</p>
+<p>spring中循环依赖有三种情况：</p>
+<p>（1）<strong>构造器注入形成的循环依赖。</strong>beanB需要在beanA的构造函数中完成初始化，beanA也需要在beanB的构造函数中完成初始化，这种情况的结果就是两个bean都不能完成初始化，循环依赖难以解决。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> A&#123;</span><br><span class="line">    B b;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">A</span><span class="params">(B b)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.b = b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> B&#123;</span><br><span class="line">    A a;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">B</span><span class="params">(A a)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.a = a;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/885859-20200508180615793-1149903775.png" class title="img">
+
+<p>（2）<strong>setter注入构成的循环依赖。</strong>beanA需要在beanB的setter方法中完成初始化，beanB也需要在beanA的setter方法中完成初始化，spring设计的机制主要就是解决这种循环依赖，也是今天下文讨论的重点。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> A&#123;</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">    B b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> B&#123;</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">    A a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/06/07/2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/885859-20200508180602441-272857363.png" class title="img">
+
+<p>（3）<strong>prototype作用域bean的循环依赖。</strong>这种循环依赖同样无法解决，因为spring不会缓存‘prototype’作用域的bean，而spring中循环依赖的解决正是通过缓存来实现的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="meta">@Scope(&quot;prototype&quot;)</span></span><br><span class="line"><span class="keyword">public</span> A&#123;</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">    B b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="meta">@Scope(&quot;prototype&quot;)</span></span><br><span class="line"><span class="keyword">public</span> B&#123;</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">    A a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Spring对单例setter注入循环依赖的解决方法：</p>
+<p>（1）初始化A，通过构造函数创建了一个单例对象，并将此对象缓存下来，还未执行setter方法；</p>
+<p>（2）准备对B进行setter注入，对B进行初始化；</p>
+<p>（3）初始化B，发现依赖A，对A初始化，发现A已经初始化，则从缓存中拿到A的引用，B完成setter注入，此时B在Ioc容器中生成；</p>
+<p>（4）A从Ioc容器中获取B，对B进行setter注入，A初始化完成。</p>
+<p>编程：</p>
+<p>1、判断回文串</p>
+<p>2、判断最长回文子串</p>
+<h2 id="美团打车-二面-8-x2F-26">1.14. 美团打车 二面 8&#x2F;26</h2><p>1、项目</p>
+<p>2、论文，栈优化</p>
+<p>编程：</p>
+<p>1、Z型输出矩阵</p>
+<p>反问：</p>
+<p>1、美团安全治理方面</p>
+<p>2、Java栈</p>
+<h2 id="微软-一面-9-x2F-19">1.15. 微软 一面 9&#x2F;19</h2><p>编程：</p>
+<p>1、循环房屋盗窃</p>
+<h2 id="招银网络科技-一面-9-x2F-19">1.16. 招银网络科技 一面 9&#x2F;19</h2><p>1、mysql语句</p>
+<p>创建表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `student`(</span><br><span class="line">	`id` VARCHAR(10) NOT NULL,</span><br><span class="line">	`name` VARCHAR(20) NOT NULL,</span><br><span class="line">    `age` INT(20) NOT NULL,</span><br><span class="line">    PRIMARY KEY(`id`)</span><br><span class="line">)ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+
+<p>查询最后一次插入的记录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT `id` FROM `student` WHERE `name` = &#x27;xxx&#x27; LIMITE 0,1;</span><br></pre></td></tr></table></figure>
+
+<p>2、ArrayList和LinkedList区别</p>
+<p>3、Set如何判断重复</p>
+<p>4、代理模式</p>
+<p>5、单例模式</p>
+<h2 id="广东省农信-一面-9-x2F-21">1.17. 广东省农信 一面 9&#x2F;21</h2><p>MySQL检查是否使用索引</p>
+<h2 id="阿里-一面-9-x2F-21">1.18. 阿里 一面 9&#x2F;21</h2><p>1、大数据流中寻找最大的k个数</p>
+<p>2、堆的数据结构</p>
+<p>3、堆排序为什么是nlogn</p>
+<p>4、多线程并发问题</p>
+<p>5、线程传递值</p>
+<p>6、线程池</p>
+<p>7、ThreadLocal底层实现</p>
+<p>8、使用ThreadLocal需要注意什么问题？</p>
+<p>9、强引用、软引用、弱引用、虚引用</p>
+<p><strong>强引用</strong>：直接<code>new</code>的对象都是强引用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object o = new Object();</span><br></pre></td></tr></table></figure>
+
+<p>只要某个对象有强引用与之关联，这个对象永远不会被回收，即使内存不足，JVM宁愿抛出OOM，也不会去回收。</p>
+<p>若要让其回收，只需要设置为null，这样对象就没有引用可以到达。</p>
+<p><strong>软引用</strong>：通过<code>SoftReference</code>包装的对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SoftReference studentSoftReference = new SoftReference(new Student());</span><br><span class="line">Student student = studentSoftReference.get();</span><br></pre></td></tr></table></figure>
+
+<p>如果内存不足时，触发GC后，如果内存仍然不足，则会回收软引用。</p>
+<p>使用场景：比较适合用作缓存，当内存足够，可以正常的拿到缓存，当内存不够，就会先干掉缓存，不至于马上抛出OOM。</p>
+<p><strong>弱引用</strong>：通过<code>WeakReference</code>包装的对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WeakReference&lt;byte[]&gt; weakReference = new WeakReference&lt;byte[]&gt;(new byte[1024*1024*10]);</span><br></pre></td></tr></table></figure>
+
+<p>只要发生GC，无论内存是否充足，弱引用会被回收。</p>
+<p><strong>虚引用</strong>：通过<code>PhantomReference</code>包装的对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ReferenceQueue queue = new ReferenceQueue();</span><br><span class="line">PhantomReference&lt;byte[]&gt; reference = new PhantomReference&lt;byte[]&gt;(new byte[1], queue);</span><br></pre></td></tr></table></figure>
+
+<p>虚引用必须与<code>ReferenceQueue</code>一起使用，当GC准备回收一个对象，如果发现它还有虚引用，就会在回收之前，把这个虚引用加入到与之关联的队列中。</p>
+<p>作用：跟踪回收对象，清理相关资源。NIO中，就运用了虚引用管理堆外内存。</p>
+<p>10、Redis用来做什么？</p>
+<p>11、为什么使用缓存</p>
+<p>12、Redis使用应该注意什么？会出现什么问题？</p>
+<p>13、缓存雪崩是什么？如何解决？</p>
+<p>14、热搜怎么实现？底层数据结构是什么？</p>
+<p>Redis的sorted set实现，底层是红黑树</p>
+<p>15、消息队列用来做什么？</p>
+<p>发布-订阅模式，削峰限流，异步处理</p>
+<p>16、消息堆积，应该如何处理？</p>
+<p>17、索引使用的原则</p>
+<p>最左匹配原则</p>
+<p>18、查询age大于28的男性，应该怎么设置索引？</p>
+<p>19、项目中运用到什么设计模式？</p>
+<p>20、类加载的双亲委派模型</p>
+<p>编程：</p>
+<p>1、<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-duplicate-subtrees/">寻找重复子树</a></p>
+<p>2、排列组合</p>
+<h2 id="微软-二面-9-x2F-22">1.19. 微软 二面 9&#x2F;22</h2><p>1、项目的数据表设计</p>
+<p>2、查询每个月卖出最多5个用户</p>
+<p>3、下订单的Restful API是什么样</p>
+<h2 id="华为-一面-二面-9-x2F-22">1.20. 华为 一面 二面 9&#x2F;22</h2><p>1、访问百度时，整个ip转发的过程</p>
+<p>2、项目需求是怎么做的</p>
+<p>3、做项目的过程，如何推进功能</p>
+<p>4、遇到问题和反馈时，如何解决</p>
+<p>5、项目难点</p>
+<p>编程：</p>
+<p>1、模拟内存分配</p>
+<p>2、链表排序，时间复杂度O(nlogn)，空间复杂度O(1)</p>
+<h2 id="intel-一面-10-x2F-11">1.21. intel 一面 10&#x2F;11</h2><p>对称加密和非对称加密</p>
+<p>数字签名</p>
+<p>对签名的攻击</p>
+<p>哈希表是什么</p>
+<p>处理哈希表冲突的方法</p>
+<p>头文件为什么要加上<code>#define</code>？</p>
+<p><code>extern</code>有什么作用？</p>
+<p>指针是什么</p>
+<p>平衡二叉树，插入时如何旋转？</p>
+<p>编程：</p>
+<p>1、归并排序</p>
+<p>2、非递归，归并排序</p>
+<p>反问：</p>
+<p>intel flex</p>
+<p>本身没有项目，内包部门，与其他部门做项目，相当于临时工</p>
+<h2 id="intel-二面-10-x2F-11">1.22. intel 二面 10&#x2F;11</h2><p>hr英文面，直接寄</p>
+<h2 id="招银网络-二面-10-x2F-11">1.23. 招银网络 二面 10&#x2F;11</h2><p>1、Redis缓存雪崩，缓存击穿，缓存穿透，解决方法</p>
+<p>2、为什么要用双亲委派机制？</p>
+<p>保证每一个类在各个类加载器中都是同一个类。</p>
+<p>保证<code>java</code>官方的类库<code>&lt;JAVA_HOME&gt;\lib</code>和扩展类库<code>&lt;JAVA_HOME&gt;\lib\ext</code>的加载安全性，不会被开发者覆盖。</p>
+<p>3、Spring和SpringBoot区别</p>
+<p>4、哈希的作用</p>
+<p>5、Redis集群，用hash均匀分配数据，若要扩容，增加Redis服务器，那么应该怎么做？</p>
+<p>环形hash?</p>
+<p>6、MyBatis如何添加额外的映射，如类中有枚举对象，如何映射到数据库？</p>
+<p>7、员工考核系统，如何设计数据库</p>
+<p>8、如何设计系统权限</p>
+<p>9、你有什么其他优点？</p>
+<h2 id="阿里-一面-10-x2F-13">1.24. 阿里 一面 10&#x2F;13</h2><p>编程：LRU</p>
+<p>设计模式，单例模式实现方式有哪些</p>
+<p>服务器死机的问题，如何解决，如何debug</p>
+<p>SpringBoot与Spring的区别</p>
+<p>自动装配的实现</p>
+<p>学习一个新知识，你的学习过程</p>
+<p>MySQL一张表的最大容量是多少，超过多少性能会下降 </p>
+<p>海量数据如何存储，工程上如何实现</p>
+<p>使用过大数据分析吗，如Hadoop，分析策略上与一般数据库有什么不同</p>
+<p>负载均衡如何实现</p>
+<p>微服务是什么</p>
+<h2 id="中国电信-一面-10-x2F-19">1.25. 中国电信 一面 10&#x2F;19</h2><p>有没有用过其他开源数据库</p>
+<p>网络安全攻防了解吗</p>
+<p>python和C会吗</p>
+<p>成绩真的有前10%吗？</p>
+<h2 id="中国移动-一面-10-x2F-19">1.26. 中国移动 一面 10&#x2F;19</h2><h2 id="深圳智慧城市-一面-10-x2F-22">1.27. 深圳智慧城市 一面 10&#x2F;22</h2><h2 id="平安金服-一面-10-x2F-24">1.28. 平安金服 一面 10&#x2F;24</h2><p>MySQL索引设计要注意什么</p>
+<p>MySQL的日志</p>
+<p>JAVA集合类</p>
+<p>如何理解面向抽象</p>
+<p>设计模式</p>
+<p>微服务设计</p>
+<p>对银行业务了解吗</p>
+<p>自己最大的优点是什么</p>
+<p>架构师需要什么能力</p>
+<h2 id="中兴-二面-10-x2F-28">1.29. 中兴 二面 10&#x2F;28</h2><p>C++的局部变量存储在哪里</p>
+<p>linux做过什么，做过网络编程吗</p>
+<p>大端存储和小端存储，单位是什么？</p>
+<h2 id="携程-一面-10-x2F-28">1.30. 携程 一面 10&#x2F;28</h2><p>1、高并发需求，应该如何设计，使用什么技术？</p>
+<p>2、Ribbon负载均衡如何实现的</p>
+<p>3、项目的安全问题，认证问题如何解决</p>
+<p>4、Spring Cloud相关组件使用</p>
+<p>5、多并发编程需要注意什么</p>
+<p>6、线程如何创建？除了线程池还有什么方式？</p>
+<ul>
+<li>Thread</li>
+<li>实现Runnable</li>
+<li>实现Callable</li>
+<li>ThreadPoolExecutor线程池</li>
+</ul>
+<p>7、如何实现高并发？</p>
+<h2 id="携程-二面-11-x2F-1">1.31. 携程 二面 11&#x2F;1</h2><p>1、项目</p>
+<p>2、如何拆分微服务</p>
+<p>3、你被困在一个房间，要待上10天，房间里面有毒气，现在给你一瓶A药和一瓶B药，他们分别有10片药片，每天需要吃一片A和一片B才能活下来，如果你打翻了两个瓶子，A药片和B药片混在了一起且无法区分，你要如何撑过10天？</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/22/JVM%E4%BB%8B%E7%BB%8D/" rel="prev" title="JVM介绍">
+      <i class="fa fa-chevron-left"></i> JVM介绍
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/07/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6%E5%A4%8D%E4%B9%A0/" rel="next" title="后端框架复习">
+      后端框架复习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2022%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93"><span class="nav-text">1. 2022面试题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95%E5%B2%97"><span class="nav-text">1.1. 阿里密码算法岗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91%E6%99%BA%E8%83%BD-ProtalDB"><span class="nav-text">1.2. 阿里云智能-ProtalDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82Tiktok-%E4%B8%80%E9%9D%A2-3-x2F-24"><span class="nav-text">1.3. 字节Tiktok 一面 3&#x2F;24</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%9A%82%E8%9A%81-%E6%94%AF%E4%BB%98%E5%AE%9D-%E4%B8%80%E9%9D%A2-3-x2F-29"><span class="nav-text">1.4. 蚂蚁 支付宝 一面 3&#x2F;29</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82-%E4%B8%80%E9%9D%A2-3-x2F-31"><span class="nav-text">1.5. 字节 一面 3&#x2F;31</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82-%E4%BA%8C%E9%9D%A2-4-x2F-2"><span class="nav-text">1.6. 字节 二面 4&#x2F;2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82-%E4%B8%89%E9%9D%A2-4-x2F-6"><span class="nav-text">1.7. 字节 三面 4&#x2F;6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%9A%82%E8%9A%81-%E4%BA%8C%E9%9D%A2-4-x2F-6"><span class="nav-text">1.8. 蚂蚁 二面 4&#x2F;6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2-%E4%B8%80%E9%9D%A2-4-x2F-12"><span class="nav-text">1.9. 美团 一面 4&#x2F;12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2-%E4%BA%8C%E9%9D%A2-4-x2F-15"><span class="nav-text">1.10. 美团 二面 4&#x2F;15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%97%E6%96%B9%E5%9F%BA%E9%87%91-%E4%B8%80%E9%9D%A2-7-x2F-28"><span class="nav-text">1.11. 南方基金 一面 7&#x2F;28</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82%E4%BA%92%E5%A8%B1-%E4%B8%80%E9%9D%A2-8-x2F-5"><span class="nav-text">1.12. 字节互娱 一面 8&#x2F;5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2%E6%89%93%E8%BD%A6-%E4%B8%80%E9%9D%A2-8-x2F-19"><span class="nav-text">1.13. 美团打车 一面 8&#x2F;19</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2%E6%89%93%E8%BD%A6-%E4%BA%8C%E9%9D%A2-8-x2F-26"><span class="nav-text">1.14. 美团打车 二面 8&#x2F;26</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E8%BD%AF-%E4%B8%80%E9%9D%A2-9-x2F-19"><span class="nav-text">1.15. 微软 一面 9&#x2F;19</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%9B%E9%93%B6%E7%BD%91%E7%BB%9C%E7%A7%91%E6%8A%80-%E4%B8%80%E9%9D%A2-9-x2F-19"><span class="nav-text">1.16. 招银网络科技 一面 9&#x2F;19</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%BF%E4%B8%9C%E7%9C%81%E5%86%9C%E4%BF%A1-%E4%B8%80%E9%9D%A2-9-x2F-21"><span class="nav-text">1.17. 广东省农信 一面 9&#x2F;21</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C-%E4%B8%80%E9%9D%A2-9-x2F-21"><span class="nav-text">1.18. 阿里 一面 9&#x2F;21</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E8%BD%AF-%E4%BA%8C%E9%9D%A2-9-x2F-22"><span class="nav-text">1.19. 微软 二面 9&#x2F;22</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8E%E4%B8%BA-%E4%B8%80%E9%9D%A2-%E4%BA%8C%E9%9D%A2-9-x2F-22"><span class="nav-text">1.20. 华为 一面 二面 9&#x2F;22</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intel-%E4%B8%80%E9%9D%A2-10-x2F-11"><span class="nav-text">1.21. intel 一面 10&#x2F;11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intel-%E4%BA%8C%E9%9D%A2-10-x2F-11"><span class="nav-text">1.22. intel 二面 10&#x2F;11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%9B%E9%93%B6%E7%BD%91%E7%BB%9C-%E4%BA%8C%E9%9D%A2-10-x2F-11"><span class="nav-text">1.23. 招银网络 二面 10&#x2F;11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C-%E4%B8%80%E9%9D%A2-10-x2F-13"><span class="nav-text">1.24. 阿里 一面 10&#x2F;13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1-%E4%B8%80%E9%9D%A2-10-x2F-19"><span class="nav-text">1.25. 中国电信 一面 10&#x2F;19</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8-%E4%B8%80%E9%9D%A2-10-x2F-19"><span class="nav-text">1.26. 中国移动 一面 10&#x2F;19</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%9C%B3%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82-%E4%B8%80%E9%9D%A2-10-x2F-22"><span class="nav-text">1.27. 深圳智慧城市 一面 10&#x2F;22</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E5%AE%89%E9%87%91%E6%9C%8D-%E4%B8%80%E9%9D%A2-10-x2F-24"><span class="nav-text">1.28. 平安金服 一面 10&#x2F;24</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%85%B4-%E4%BA%8C%E9%9D%A2-10-x2F-28"><span class="nav-text">1.29. 中兴 二面 10&#x2F;28</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%BA%E7%A8%8B-%E4%B8%80%E9%9D%A2-10-x2F-28"><span class="nav-text">1.30. 携程 一面 10&#x2F;28</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%BA%E7%A8%8B-%E4%BA%8C%E9%9D%A2-11-x2F-1"><span class="nav-text">1.31. 携程 二面 11&#x2F;1</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Herfrain</p>
+  <div class="site-description" itemprop="description">记录美好</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/herfrain" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;herfrain" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Herfrain</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">64k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:56</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div><!-- 背景离子效果 -->
+<script color="0,0,255" pointColor="255,0,255" opacity="0.7" count="99"  zIndex="-1"
+ src="/lib/canvas-nest/dist/canvas-nest.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

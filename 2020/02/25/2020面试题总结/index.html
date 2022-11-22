@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="2020面试题总结，面试的公司包括字节、华为、广发、百度、省农信、广州光锥元等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020面试题总结">
+<meta property="og:url" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="随峰而动">
+<meta property="og:description" content="2020面试题总结，面试的公司包括字节、华为、广发、百度、省农信、广州光锥元等">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C5E.tmp.png">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C5F.tmp.jpg">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C60.tmp.jpg">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C61.tmp.jpg">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C62.tmp.jpg">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C63.tmp.jpg">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/image-20220212190746427.png">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C74.tmp.jpg">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C75.tmp.jpg">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C76.tmp.jpg">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C77.tmp.png">
+<meta property="og:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C78.tmp.jpg">
+<meta property="article:published_time" content="2020-02-25T07:26:14.000Z">
+<meta property="article:modified_time" content="2022-10-31T10:25:40.007Z">
+<meta property="article:author" content="Herfrain">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C5E.tmp.png">
+
+<link rel="canonical" href="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>2020面试题总结 | 随峰而动</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="随峰而动" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">随峰而动</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Herfrain</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">11</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">8</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Herfrain">
+      <meta itemprop="description" content="记录美好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="随峰而动">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2020面试题总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-25 15:26:14" itemprop="dateCreated datePublished" datetime="2020-02-25T15:26:14+08:00">2020-02-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-10-31 18:25:40" itemprop="dateModified" datetime="2022-10-31T18:25:40+08:00">2022-10-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E7%BB%8F/" itemprop="url" rel="index"><span itemprop="name">面经</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>15 分钟</span>
+            </span>
+            <div class="post-description">2020面试题总结，面试的公司包括字节、华为、广发、百度、省农信、广州光锥元等</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>你有什么问题要问吗？</p>
+<ul>
+<li>贵公司对新加入公司的员工有没有什么培训项目</li>
+<li>贵公司的晋升机制是什么样的？</li>
+<li>入职后参与的项目的情况</li>
+<li>我这次面试还有什么地方有待改进？</li>
+<li>…</li>
+</ul>
+<h1 id="字节跳动">1. 字节跳动</h1><p>1、抽象类与接口区别</p>
+<ol>
+<li>抽象类：<ol>
+<li>abstract修饰</li>
+<li>可以有构造方法</li>
+<li>任意成员变量</li>
+<li>任意方法</li>
+<li>用于继承，一个类只能继承一个抽象类</li>
+<li>子类可以是抽象类</li>
+</ol>
+</li>
+<li>接口<ol>
+<li>interface修饰</li>
+<li>没有构造方法</li>
+<li>成员变量必须是public static final，且需要初始化</li>
+<li>只有抽象方法public abstract</li>
+<li>用于实现，一个类可实现多个接口</li>
+<li>子类（实现类）必须实现接口所有抽象方法</li>
+</ol>
+</li>
+</ol>
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C5E.tmp.png" class title="img">
+
+<p>2、抽象类与接口的选择</p>
+<ol>
+<li>使用抽象类<ol>
+<li>经常修改方法或添加方法</li>
+<li>需要提供默认行为</li>
+</ol>
+</li>
+<li>使用接口<ol>
+<li>功能基本不变</li>
+<li>使用多继承（多实现）</li>
+</ol>
+</li>
+</ol>
+<p>3、为什么要面向抽象编程（为什么要用抽象类）？</p>
+<ul>
+<li>抽取相同属性，共有行为</li>
+<li>便于扩展，实现多态</li>
+</ul>
+<p>4、引用和指针的区别</p>
+<ol>
+<li>引用<ol>
+<li>变量的别名（不是拷贝，用于参数时提高效率）</li>
+<li>直接访问变量，相当于对原变量直接操作</li>
+<li>必须声明的时候就初始化（即一定不为空）</li>
+<li>可以用const修饰</li>
+</ol>
+</li>
+<li>指针<ol>
+<li>指向变量的内存地址 int *p; int a; p&#x3D;&amp;a;</li>
+<li>间接访问变量，通过地址访问变量</li>
+<li>可以为空指针</li>
+<li>可以用const修饰，指针常量，表示该指针不可变（地址不可变）</li>
+</ol>
+</li>
+</ol>
+<h1 id="华为">2. 华为</h1><p><strong>一面</strong></p>
+<ol>
+<li>找最长单词的元音字母，去重并排序</li>
+<li>项目，计网</li>
+</ol>
+<p><strong>二面</strong></p>
+<ol>
+<li><p>计算机网络，协议</p>
+</li>
+<li><p>项目</p>
+</li>
+<li><p>java的类实例化会不会失败？</p>
+<p>按理说不会失败，类有默认的空构造函数，实例化时会调用，抽象类就不能实例化</p>
+</li>
+<li><p>找最长回文子串</p>
+</li>
+<li><p>抽象类和接口不能实例化</p>
+</li>
+</ol>
+<p><strong>三面</strong></p>
+<ol>
+<li>项目，职责，遇到突发事件能力</li>
+<li>笔试分数？</li>
+<li>网络部分知识，语言java，c++</li>
+</ol>
+<h1 id="广发银行">3. 广发银行</h1><p><strong>一面</strong></p>
+<ol>
+<li><p>项目职责</p>
+</li>
+<li><p>SpringMVC</p>
+</li>
+<li><p>MyBatis，用#还是$符号？</p>
+<ol>
+<li><p>#{a} 自动把a的值变为字符串，即加上了’’；预编译；防止sql注入</p>
+<p>如id的值为2，则select * from admin where id&#x3D;#{id}-&gt; select * from admin where id&#x3D;’2’</p>
+</li>
+<li><p>${a} 不会将a当做字符串处理，原来值是什么就是什么</p>
+<p>如id的值为2，则select * from admin where id&#x3D;#{id}-&gt; select * from admin where id&#x3D;2</p>
+<p>如id的值为id，可以用于select * from admin order by ${id}-&gt; select * from admin order by id</p>
+</li>
+</ol>
+<p>一般能用#{}就用这个</p>
+</li>
+<li><p>session</p>
+</li>
+<li><p>分布式</p>
+<p>一句话概括：分布式就是我们把整个系统拆分成不同的服务，然后将这些服务放在不同的服务器上减轻单体服务的压力，提高并发量和性能，便于系统的管理与维护。</p>
+<p>比如电商系统可以简单地拆分成订单系统、商品系统、登录系统等等，拆分之后的每个服务可以部署在不同的机器上，如果某一个服务的访问量比较大的话也可以将这个服务同时部署在多台机器上。</p>
+</li>
+<li><p>分布式系统设计：</p>
+<ol>
+<li>中心化设计：<ul>
+<li>节点分为两个角色：“领导”和“工人”</li>
+<li>“领导”负责分发任务和监督“工人”工作，“工人”负责完成相应任务</li>
+<li>问题：1.“领导”如果宕机怎么办？2.“领导”的能力不足怎么办？</li>
+<li>解决：1.使用主备“领导”，热备或冷备，自动切换或主动切换2.更新优化硬件或软件</li>
+</ul>
+</li>
+<li>去中心化设计：<ul>
+<li>各个节点之间低位平等，每个节点既是“领导”又是“工人”</li>
+<li>去中心化不是不要中心，而是节点自动选择中心，集群自发选举“领导”来主持工作</li>
+<li>问题：1.脑裂问题：一个集群由于网络故障，被分为两个互不连通的独立集群，如果它们同时工作，将会导致数据不同步的问题</li>
+<li>解决：1.独立集群中规模较小的可以停止运行，只需规模最大的保持运行</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>Dubbo</strong></p>
+<p>高性能、轻量级开源Java RPC框架，是分布式服务框架，致力于提供高性能和透明化的RPC远程服务调用方案，以及SOA服务治理方案。</p>
+</li>
+<li><p><strong>RPC</strong></p>
+<p>Remote Procedure Call—远程过程调用，是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议</p>
+</li>
+<li><p>java基本数据类型，常用的类</p>
+</li>
+</ol>
+<h1 id="百度">4. 百度</h1><p><strong>一面</strong></p>
+<ol>
+<li><p>文件类型，按用户观点来分类？</p>
+<ol>
+<li>按用途分类：<ul>
+<li>系统文件：由系统软件构成的文件，大多只允许用户调用，不允许用户读和改</li>
+<li>库文件：允许用户调用，不许更改</li>
+<li>用户文件：用户的源代码、目标文件、可执行文件或数据</li>
+</ul>
+</li>
+<li>按结构分类：<ul>
+<li>结构文件（记录）</li>
+<li>无结构文件（字节流）</li>
+</ul>
+</li>
+<li>按形式分类：<ul>
+<li>源文件：源程序和数据构成的文件</li>
+<li>目标文件：源文件经过编译行程的，但尚未经过链接程序链接的目标代码构成的文件（属于二进制文件）</li>
+<li>可执行文件：目标代码经过链接程序连接后形成的文件</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>快排</p>
+</li>
+<li><p>TCP&#x2F;UDP</p>
+</li>
+<li><p>TCP的建立与释放</p>
+</li>
+<li><p>学生会、班长，感想、收获</p>
+</li>
+</ol>
+<p><strong>二面</strong></p>
+<ol>
+<li><p>计算机系统中的堆和栈，变量保存在哪？</p>
+<p>栈（stack）：系统自动分配和回收，连续存储（速度快），保存局部变量</p>
+<p>堆（heap）：程序员自己分配（如malloc&#x2F;new）和回收（如free&#x2F;delete），程序结束时系统也会回收，不连续存储（速度慢），程序员自己设定变量</p>
+</li>
+<li><p>死锁，资源</p>
+<p>多个进程竞争同一个不可剥夺的资源而出现互相等待的局面（如打印机、磁带机资源）</p>
+<p>进程间彼此等待对方发送消息也会造成死锁</p>
+<p>死锁四个必要条件：互斥条件、不可剥夺条件、请求并保持条件、循环等待条件</p>
+</li>
+<li><p>简单介绍一下动态规划，为什么它速度快？</p>
+<p>动态规划是用来解决最优化问题的方法，它将大问题划分为多个子问题，然后能保存已经计算过子问题的答案，并用这些答案再得出新的子问题答案，最终求得最优解，避免了大量的重复运算，节约时间。</p>
+</li>
+<li><p>索引，怎么维护索引？</p>
+<p>索引的数据结构有两种，一种是B+树，一种是哈希表</p>
+<p>当表中有大量增、删、改的时候，需要维护索引，维护索引的方法：1.重构索引 2.合并索引</p>
+</li>
+</ol>
+<h1 id="省农信">5. 省农信</h1><ol>
+<li>项目难题，如何解决</li>
+<li>第一份工作，为什么选择来我们这里</li>
+<li>职业规划</li>
+<li>java与c++的区别，类的继承方面</li>
+</ol>
+<h1 id="广州光锥元">6. 广州光锥元</h1><ol>
+<li><p>java面向对象如何理解</p>
+<p>面向对象的三大特征：封装、继承、多态</p>
+</li>
+<li><p>如何获取栈中最大值，O(1)</p>
+<p>用另一个栈存储当前出现过的最大值</p>
+</li>
+<li><p>如何检测链表是环</p>
+<p>如果有拓扑排序则表明不是环，如果没有则是环</p>
+</li>
+<li><p>n*n的01矩阵中，找k*k矩阵中1最多的个数</p>
+</li>
+<li><p>排序，冒泡（如何算时间复杂度），快排</p>
+</li>
+<li><p>使用过哪些集合类，ArrayList，LinkedList区别</p>
+</li>
+<li><p>HashMap是什么，Hash是什么，线性探测</p>
+</li>
+<li><p>简述索引，什么时候建索引，聚簇索引和非聚簇索引</p>
+<p>索引就是用于快速查询的数据结构，索引的数据结构一般为B+树</p>
+<p>需要经常搜索的字段应该建立索引</p>
+<p>聚簇索引：索引结构和数据放在一起，叶子结点存放的是整行数据</p>
+<p>非聚簇索引：索引结构和数据分开放，叶子结点存放的是主键</p>
+</li>
+<li><p>什么是事务，事务隔离级别</p>
+<p>事务的四大特性：</p>
+</li>
+</ol>
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C5F.tmp.jpg" class title="img">
+
+<ul>
+<li>原子性： 事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用；</li>
+<li>一致性： 执行事务前后，数据保持一致，例如转账业务中，无论事务是否成功，转账者和收款人的总额应该是不变的；</li>
+<li>隔离性： 并发访问数据库时，一个用户的事务不被其他事务所干扰，各并发事务之间数据库是独立的；</li>
+<li>持久性： 一个事务被提交之后。它对数据库中数据的改变是持久的，即使数据库发生故障也不应该对其有任何影响。</li>
+</ul>
+<p>事务隔离级别：</p>
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C60.tmp.jpg" class title="img">
+
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C61.tmp.jpg" class title="img">
+
+<ol start="10">
+<li>设计模式，单例模式</li>
+</ol>
+<p>饿汉式：编译的时候就初始化实例（private static final）</p>
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C62.tmp.jpg" class title="img">
+
+<p>懒汉式：运行时创建实例，如果是并发操作则应该上锁</p>
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C63.tmp.jpg" class title="img">
+
+<p>如果并发创建单例，应该如何防止出现问题？</p>
+<p>使用<strong>双重校验锁</strong></p>
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/image-20220212190746427.png" class title="image-20220212190746427">
+
+<h1 id="深圳四方精创">7. 深圳四方精创</h1><p>工资情况</p>
+<ol>
+<li>实习期（入职-拿毕业证）：3000，免住房</li>
+<li>试用期（3-6个月）：4800</li>
+<li>正式：7000-7500税前，年终奖1-1.3倍基本工资（3000）</li>
+<li>加班：周末2倍，节假日3倍</li>
+</ol>
+<h1 id="深圳快造">8. 深圳快造</h1><p>问题：</p>
+<ol>
+<li>归并排序，稳定性</li>
+<li>快排</li>
+</ol>
+<p>职位：做CAM（computer act machine），计算机图形学</p>
+<p>找工作（个人角度）：</p>
+<ol>
+<li>成长（公司是否有成长性，是否能真正学到东西）</li>
+<li>兴趣（自己的兴趣点在哪）</li>
+<li>薪资：应该比自己产出的价值低一些，</li>
+<li>舒适（现在不用考虑舒适的问题，现在是拼命的年纪）</li>
+</ol>
+<p>公司角度：</p>
+<ol>
+<li>是否聪明，是否有能力</li>
+<li>薪资，如何两个人成长性相同，那么肯定要薪资低的</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li><p>考研目标不明确，到底自己为什么要考研？</p>
+<p>我为什么要考研呢？跟风？应该是听了周围人的意见，他们说现在本科生是大白菜，不好找工作，有了研究生文凭会容易一些。说到底还是为了找工作，找更好的工作，工资更高的工作而已。还有就是去一个更好的学校，体验一下另外一种氛围，然后结识更优秀的人吧。</p>
+</li>
+<li><p>考研失利后没有很好地反思</p>
+<p>为什么没考好？可能是考试时候心态不稳定，发挥失常。明明之前模拟测试的时候分数不低，但到最终考场，水平会大打折扣。刷的题目不够多，然后不能融会贯通，做数学的时候感觉跟之前做的都不是一种卷子，很多地方都不知道怎么入手。不够拼命，在最后复习阶段，我仍然像一般复习那样，到最后关头有些松懈了，没有一直紧绷着神经。</p>
+</li>
+<li><p>竞赛没有含金量，没有亮点</p>
+<p>美国数学建模大赛还是有含金量的，H奖大概在前15%</p>
+</li>
+</ol>
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C74.tmp.jpg" class title="img">
+
+<ol start="4">
+<li><p>不能证明自己的能力</p>
+<p>因为没有参加富有含金量的比赛，</p>
+</li>
+</ol>
+<p>如何证明自己有能力？</p>
+<h1 id="工商银行软件">9. 工商银行软件</h1><ol>
+<li>单例模式</li>
+<li>对工商银行软开的看法？</li>
+<li>如果你很努力了，但绩效考核还是很差，你会怎么做？</li>
+<li>如果上司安排给你无法完成的工作量，你会怎么做？</li>
+</ol>
+<h1 id="联通广州研究院">10. 联通广州研究院</h1><p><strong>一面</strong></p>
+<ol>
+<li>SpringBoot</li>
+<li>SpringMVC过程</li>
+<li>Java原生于Spring的区别</li>
+<li>你有什么缺点</li>
+<li>有没用过分布式</li>
+<li>路由器和交换机的区别</li>
+</ol>
+<h1 id="招银网络科技">11. 招银网络科技</h1><p><strong>一面</strong></p>
+<ol>
+<li>JVM中的内存区域，内存泄漏的情况</li>
+</ol>
+<ul>
+<li><p>线程共享：堆（新生代、老生代、永生代-&gt;元空间（JDK1.8））、方法区-&gt;元空间（JDK1.8，元空间放在直接内存中）、直接内存</p>
+</li>
+<li><p>线程私有：程序计数器、虚拟机栈、本地方法栈</p>
+</li>
+<li><p>堆：存放几乎所有对象，程序员自己分配</p>
+</li>
+<li><p>栈：存放局部变量，系统自动分配和回收</p>
+</li>
+<li><p>方法区：存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据</p>
+</li>
+<li><p>常量池：JDK1.7在方法区中，JDK1.8在堆中</p>
+</li>
+<li><p>内存泄漏：一个程序不再被使用，但仍然在内存中占用内存空间</p>
+</li>
+<li><p>内存溢出：当程序申请内存时，系统没有足够内存提供使用，即你要使用的内存空间&gt;系统给你分配的内存空间</p>
+</li>
+<li><p>JVM虽然有GC自动回收垃圾，但有些情况会让JVM误认为对象还在引用，从而不回收，导致内存泄漏或溢出</p>
+<p>  内存泄漏的情况：</p>
+</li>
+<li><p>递归过深，栈进得太深</p>
+</li>
+<li><p>new的对象大小超过了内存容量</p>
+</li>
+<li><p>静态集合类：其生命周期和程序一样，在程序结束之前都无法被释放</p>
+</li>
+<li><p>各种连接：</p>
+</li>
+<li><p>变量不合理的作用域</p>
+</li>
+<li><p>内部类持有外部类</p>
+</li>
+<li><p>改变哈希值</p>
+</li>
+</ul>
+<ol start="2">
+<li>Java类初始化的情况，什么时候类会初始化，如new的时候，还有其他吗？</li>
+</ol>
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C75.tmp.jpg" class title="img">
+
+<ol start="3">
+<li>HashSet和TreeSet区别</li>
+<li>HashMap中，简述哈希冲突，以及解决哈希冲突的方法</li>
+<li>冒泡排序，看一下编码风格和编码规范</li>
+<li>线程阻塞后，是否会阻塞进程（多处理机）</li>
+</ol>
+<p>线程模型：</p>
+<p>(1) 多对1用户级线程模型</p>
+<ul>
+<li>线程的创建、调度、同步，由所属进程的用户空间线程库实现。</li>
+<li>用户态线程，对内核几乎是透明的（许多操作不需要内核接管）</li>
+<li>但线程总要有一些操作经过内核，比如系统调用。</li>
+<li>不需要频繁的内核态&#x2F;用户态切换，处理速度非常快。</li>
+<li>该模式下，当进程的某个线程，系统调用（比如I&#x2F;O）阻塞时，该进程也会阻塞。</li>
+<li>原因：该模式下，进程的所有线程，都对应一个内核调度实体（KES），并且内核不知道这个进程有哪些线程。KES无法将其他线程，调度到其他处理器上。该进程（所有的线程）被阻塞，直到本次系统调用（比如I&#x2F;O）结束。</li>
+</ul>
+<p>(2) 1对1内核级线程模型（Linux一般使用这个模型）</p>
+<ul>
+<li>每个用户线程都对应一个的内核调度实体。</li>
+<li>内核会对每个线程进行调度，可以调度到其他处理器上。某个线程阻塞并不会导致整个进程阻塞</li>
+<li>线程每次操作会在用户态和内核态切换。</li>
+<li>线程数量过多时，对系统性能有影响。</li>
+</ul>
+<p>(3) 多对多两级线程模型</p>
+<ul>
+<li>每个用户线程拥有多个内核调度实体</li>
+<li>多个用户线程也可以对应一个内核调度实体</li>
+<li>实现该模型非常复杂。</li>
+</ul>
+<p>在单处理机上，都会阻塞，因为只允许一个进程使用</p>
+<p><strong>二面</strong></p>
+<p>编程：</p>
+<ol>
+<li>输入一个日期，返回上个月月末日期</li>
+</ol>
+<p>问题：</p>
+<ol>
+<li>多线程方面</li>
+<li>java的锁机制</li>
+<li>印象最深的项目，做过的功能中选一个讲解</li>
+</ol>
+<p><strong>hr面</strong></p>
+<ol>
+<li>考研</li>
+<li>为什么面了这么多公司，没有offer？</li>
+<li>要有自己的看法，自己的理解，去跑项目，模仿开源项目</li>
+</ol>
+<h1 id="深圳快造-1">12. 深圳快造</h1><p><strong>一面</strong></p>
+<p>编程：</p>
+<ol>
+<li>字符串转数值</li>
+<li>最长回文子串</li>
+</ol>
+<p>问题：</p>
+<ol>
+<li>Map如何实现并发？</li>
+<li>HashMap</li>
+<li>红黑树</li>
+<li>垃圾回收GC</li>
+<li>多线程</li>
+</ol>
+<p><strong>二面</strong></p>
+<ol>
+<li><p>java为什么单继承</p>
+<p>多继承，如果多个父类有相同的方法，那么子类就不知道执行哪个，java为了简单就抛弃了多继承</p>
+</li>
+<li><p>两个堆分别有x和y个石头，A和B轮流拿若干个石头，A先手，A有稳赢的方法吗？</p>
+</li>
+<li><p>子类实例化后，父类的私有变量在这个实例中吗？</p>
+<p>子类拥有父类的私有变量，但不能访问</p>
+</li>
+<li><p>01背包问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j]表示前i个物品放在容量为j的背包中的最大价值</span><br><span class="line">要放第i个物品时</span><br><span class="line">如果第i个物品的重量大于j，则不能放入：</span><br><span class="line">dp[i][j]=dp[i-1][j];</span><br><span class="line">如果第i个物品重量不大于j，则有两种情况（放或不放），取这两种中的最大值：</span><br><span class="line">Math.max(dp[i-1][j-w[i]]+v[i],dp[i-1][j]);//放的时候需要回到j-w[i]的容量，让其刚好放进去</span><br></pre></td></tr></table></figure></li>
+<li><p>内存中的堆和栈</p>
+<p>堆：存放几乎所有对象，程序员自己分配</p>
+<p>栈：存放局部变量，系统自动分配和回收</p>
+</li>
+<li><p>main方法中的局部变量放在哪里？</p>
+<p>方法区：存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据</p>
+<p>main方法是静态方法，其中的变量就是静态变量</p>
+<p>静态变量存放在方法区中</p>
+</li>
+</ol>
+<h1 id="腾讯测试开发">13. 腾讯测试开发</h1><p><strong>一面</strong></p>
+<p>编程题：</p>
+<p>(1)<br>n天<br>work[n] 1表示公司开门，0表示公司关门<br>sport[n] 1表示健身房开门，0表示健身房关门<br>只有在开门的时候才能工作或锻炼<br>不能连续两天工作或锻炼<br>求最少休息多少天？</p>
+<p>输入：<br>4<br>1 1 0 0<br>0 1 1 0</p>
+<p>输出：<br>2</p>
+<p>(2) 解压缩字符串</p>
+<p>[3|ABC]-&gt;ABCABCABC</p>
+<p>HG[3|B[2|CA]]F-&gt;</p>
+<p>(3) 翻转数列</p>
+<p>n个数(1至n)，然后m表示每m个数符号翻转一次，初始符号为’-’，n%2m&#x3D;&#x3D;0</p>
+<p>输入：</p>
+<p>8 2</p>
+<p>-1,-2,3,4,-5,-6,7,8</p>
+<p>输出：</p>
+<p>8</p>
+<p>问题：</p>
+<ol>
+<li><p>介绍同步和异步的概念</p>
+<p>同步：A发送消息给B，A停止并等待B的响应，B响应后，A才能开始工作</p>
+<p>异步：A发送消息给B，A可以继续工作，B响应后，A处理完B的事情再继续工作</p>
+</li>
+<li><p>SpringMVC的5个组件</p>
+</li>
+</ol>
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C76.tmp.jpg" class title="img">
+
+<p>(1) DispatcherServlet （前端控制器, 处理请求的入口）</p>
+<p>(2) HandlerMapping （映射器对象, 用于管理url与对应controller的映射关系）</p>
+<p>(3) Interceptors（拦截器,实现请求响应的共性处理）</p>
+<p>(4) Controller （后端控制器, 负责处理请求的控制逻辑）</p>
+<p>(5) ViewResolver（视图解析器,解析对应的视图关系：前缀+view+后缀）</p>
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C77.tmp.png" class title="img">
+
+<img src="/2020/02/25/2020%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/wps6C78.tmp.jpg" class title="img">
+
+<p><strong>1、前端控制器DispatcherServlet（不需要工程师开发）,由框架提供（重要）</strong></p>
+<p>作用：Spring MVC 的入口函数。接收请求，响应结果，相当于转发器，中央处理器。有了 DispatcherServlet 减少了其它组件之间的耦合度。用户请求到达前端控制器，它就相当于mvc模式中的c，DispatcherServlet是整个流程控制的中心，由它调用其它组件处理用户的请求，DispatcherServlet的存在降低了组件之间的耦合性。</p>
+<p><strong>2、处理器映射器HandlerMapping(不需要工程师开发),由框架提供</strong></p>
+<p>作用：根据请求的url查找Handler。HandlerMapping负责根据用户请求找到Handler即处理器（Controller），SpringMVC提供了不同的映射器实现不同的映射方式，例如：配置文件方式，实现接口方式，注解方式等。</p>
+<p><strong>3、处理器适配器HandlerAdapter</strong></p>
+<p>作用：按照特定规则（HandlerAdapter要求的规则）去执行Handler 通过HandlerAdapter对处理器进行执行，这是适配器模式的应用，通过扩展适配器可以对更多类型的处理器进行执行。</p>
+<p><strong>4、处理器Handler(需要工程师开发)</strong></p>
+<p>注意：编写Handler时按照HandlerAdapter的要求去做，这样适配器才可以去正确执行Handler。Handler 是继DispatcherServlet前端控制器的后端控制器，在DispatcherServlet的控制下Handler对具体的用户请求进行处理。 由于Handler涉及到具体的用户业务请求，所以一般情况需要工程师根据业务需求开发Handler。</p>
+<p><strong>5、视图解析器View resolver(不需要工程师开发),由框架提供</strong></p>
+<p>作用：进行视图解析，根据逻辑视图名解析成真正的视图（view） 。View Resolver负责将处理结果生成View视图，View Resolver首先根据逻辑视图名解析成物理视图名即具体的页面地址，再生成View视图对象，最后对View进行渲染将处理结果通过页面展示给用户。 springmvc框架提供了很多的View视图类型，包括：jstlView、freemarkerView、pdfView等。 一般情况下需要通过页面标签或页面模版技术将模型数据通过页面展示给用户，需要由工程师根据业务需求开发具体的页面。</p>
+<p><strong>6、视图View(需要工程师开发)</strong></p>
+<p>View是一个接口，实现类支持不同的View类型（jsp、freemarker、pdf…）</p>
+<blockquote>
+<p>注意：处理器Handler（也就是我们平常说的Controller控制器）以及视图层view都是需要我们自己手动开发的。其他的一些组件比如：前端控制器DispatcherServlet、处理器映射器HandlerMapping、处理器适配器HandlerAdapter等等都是框架提供给我们的，不需要自己手动开发。</p>
+</blockquote>
+<ol start="3">
+<li><p>SpringMVC的优点</p>
+</li>
+<li><p>Controller是否是单例</p>
+</li>
+<li><p>用过多线程吗？</p>
+</li>
+<li><p>垃圾回收机制</p>
+</li>
+<li><p>Lock和synchronized</p>
+</li>
+<li><p>Collection接口</p>
+</li>
+<li><p>List和Map区别</p>
+</li>
+<li><p>ArrayList和LinkedList</p>
+</li>
+<li><p>项目做的工作和难点</p>
+</li>
+<li><p>java反射是什么，几种反射的方法</p>
+<p>反射：反射机制是一种动态获取信息和动态调用对象的方法的功能。在java运行期间，对于任意一个类能获取其的方法和属性，对于任意一个对象能够调用其方法和属性。</p>
+</li>
+</ol>
+<p>4种反射方法：</p>
+<ol>
+<li><p>Class.forname(“包名.类名”)</p>
+</li>
+<li><p>类.class属性</p>
+</li>
+<li><p>实例.getClass()方法</p>
+</li>
+<li><p>ClassLoader类加载器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ClassLoader classLoader = main实例.getClass().getClassLoader();</span><br><span class="line">Class c = classLoader.loadClass(className);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="深圳萨摩耶互联网金融服务有限公司">14. 深圳萨摩耶互联网金融服务有限公司</h1><ol>
+<li><p>springMVC</p>
+<ol>
+<li>配置文件注入方法，数据保存在什么地方</li>
+<li>bean的生命周期</li>
+<li>入口类</li>
+<li>mapper有哪几种，除了get&#x2F;post 还有其他吗？get和post的区别</li>
+</ol>
+</li>
+<li><p>mybatis多少级缓存？</p>
+</li>
+<li><p>Dubbo,SpringCloud</p>
+</li>
+<li><p>HashMap，HashTable，ConcurrentHashMap区别</p>
+</li>
+<li><p>索引的数据结构</p>
+</li>
+</ol>
+<p>Http请求类型</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GET</td>
+<td>请求指定的页面信息，并返回实体主体。</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头。</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和&#x2F;或已有资源的修改。</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>从客户端向服务器传送的数据取代指定的文档的内容。</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>请求服务器删除指定的页面。</td>
+</tr>
+<tr>
+<td>CONNECT</td>
+<td>HTTP&#x2F;1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>允许客户端查看服务器的性能。</td>
+</tr>
+<tr>
+<td>TRACE</td>
+<td>回显服务器收到的请求，主要用于测试或诊断。</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/25/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/" rel="prev" title="本科项目总结">
+      <i class="fa fa-chevron-left"></i> 本科项目总结
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/26/2020%E7%AC%94%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/" rel="next" title="2020笔试题总结">
+      2020笔试题总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8"><span class="nav-text">1. 字节跳动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8E%E4%B8%BA"><span class="nav-text">2. 华为</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%BF%E5%8F%91%E9%93%B6%E8%A1%8C"><span class="nav-text">3. 广发银行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BE%E5%BA%A6"><span class="nav-text">4. 百度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9C%81%E5%86%9C%E4%BF%A1"><span class="nav-text">5. 省农信</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%BF%E5%B7%9E%E5%85%89%E9%94%A5%E5%85%83"><span class="nav-text">6. 广州光锥元</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%9C%B3%E5%9B%9B%E6%96%B9%E7%B2%BE%E5%88%9B"><span class="nav-text">7. 深圳四方精创</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%9C%B3%E5%BF%AB%E9%80%A0"><span class="nav-text">8. 深圳快造</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E5%95%86%E9%93%B6%E8%A1%8C%E8%BD%AF%E4%BB%B6"><span class="nav-text">9. 工商银行软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%81%94%E9%80%9A%E5%B9%BF%E5%B7%9E%E7%A0%94%E7%A9%B6%E9%99%A2"><span class="nav-text">10. 联通广州研究院</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8B%9B%E9%93%B6%E7%BD%91%E7%BB%9C%E7%A7%91%E6%8A%80"><span class="nav-text">11. 招银网络科技</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%9C%B3%E5%BF%AB%E9%80%A0-1"><span class="nav-text">12. 深圳快造</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91"><span class="nav-text">13. 腾讯测试开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%9C%B3%E8%90%A8%E6%91%A9%E8%80%B6%E4%BA%92%E8%81%94%E7%BD%91%E9%87%91%E8%9E%8D%E6%9C%8D%E5%8A%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8"><span class="nav-text">14. 深圳萨摩耶互联网金融服务有限公司</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Herfrain</p>
+  <div class="site-description" itemprop="description">记录美好</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/herfrain" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;herfrain" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Herfrain</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">64k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:56</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div><!-- 背景离子效果 -->
+<script color="0,0,255" pointColor="255,0,255" opacity="0.7" count="99"  zIndex="-1"
+ src="/lib/canvas-nest/dist/canvas-nest.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="经典动态规划问题：最大连续子序列和、最长不下降子序列、最长公共子序列、最长回文子串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="经典动态规划问题">
+<meta property="og:url" content="http://example.com/2020/05/03/%E7%BB%8F%E5%85%B8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="随峰而动">
+<meta property="og:description" content="经典动态规划问题：最大连续子序列和、最长不下降子序列、最长公共子序列、最长回文子串">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-03T08:39:33.000Z">
+<meta property="article:modified_time" content="2022-03-01T07:05:21.287Z">
+<meta property="article:author" content="Herfrain">
+<meta property="article:tag" content="动态规划">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/05/03/%E7%BB%8F%E5%85%B8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%97%AE%E9%A2%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>经典动态规划问题 | 随峰而动</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="随峰而动" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">随峰而动</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Herfrain</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">11</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">8</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/03/%E7%BB%8F%E5%85%B8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Herfrain">
+      <meta itemprop="description" content="记录美好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="随峰而动">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          经典动态规划问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-03 16:39:33" itemprop="dateCreated datePublished" datetime="2020-05-03T16:39:33+08:00">2020-05-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-01 15:05:21" itemprop="dateModified" datetime="2022-03-01T15:05:21+08:00">2022-03-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+            <div class="post-description">经典动态规划问题：最大连续子序列和、最长不下降子序列、最长公共子序列、最长回文子串</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="最大连续子序列和">1. 最大连续子序列和</h1><p>给出一个数字序列{A1,A2,A3,…,An}，求i,j(1&lt;&#x3D;i&lt;&#x3D;j&lt;&#x3D;n)，使得Ai+…+Aj最大，并输出这个最大和。</p>
+<p>如{-2,11,-4,13,-5,-2}<br>最大连续子序列和为 11+(-4)+13&#x3D;20</p>
+<h2 id="结题思路">1.1. 结题思路</h2><p>1.设计状态：dp[i]表示以A[i]结尾的连续序列的最大和</p>
+<p>2.找出关系 ：<br>因为dp[i]要求必须以A[i]为结尾，那么就有两种情况：<br>(1) 这个最大和只有一个元素，就是A[i]，dp[i]&#x3D;A[i]<br>(2) 这个最大和有多个元素，从A[p]到A[i](p&lt;i)，dp[i] &#x3D; dp[i-1] + A[i]</p>
+<p>3.设计状态转移方程：<br>dp[i] &#x3D; max{A[i], dp[i-1]+A[i]}</p>
+<h2 id="关键代码">1.2. 关键代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ans = Integer.MIN_VALUE; <span class="comment">//最大连续子序列和</span></span><br><span class="line"><span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">dp[<span class="number">0</span>] = A[<span class="number">0</span>]; <span class="comment">//初始化dp[0]</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    dp[i] = Math.max(A[i], dp[i - <span class="number">1</span>] + A[i]);</span><br><span class="line">    ans = Math.max(ans, dp[i]);<span class="comment">//取dp数组中的最大值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="最长不下降子序列（LIS）">2. 最长不下降子序列（LIS）</h1><p>在一个数字序列中，找到一个最长的子序列（可以不连续），这个子序列是非递减的</p>
+<p>如{1,2,3,-1,-2,7,9}<br>最长不下降子序列为 {1,2,3,7,9}，长度为5</p>
+<h2 id="结题思路-1">2.1. 结题思路</h2><p>1.设计状态：dp[i]表示以A[i]结尾的最长不下降子序列的长度</p>
+<p>2.找出关系：<br>(1) 如果A[i]之前的元素全部都比A[i]大，那么dp[i]只能等于1<br>(2) 如果A[i]之前的元素A[j](j&lt;i)，有A[j]&lt;&#x3D;A[i]，找到其中最长的一个，然后加上A[i]，则dp[i]就是最长的</p>
+<p>3.设计状态转移方程：<br>dp[i]&#x3D;max{1,dp[j]+1} (0&lt;&#x3D;j&lt;i&amp;&amp;A[j]&lt;&#x3D;A[i])<br>其中dp[j]是dp[0,i-1]中的最大值</p>
+<h2 id="关键代码-1">2.2. 关键代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ans = -<span class="number">1</span>; <span class="comment">// 初始化ans</span></span><br><span class="line"><span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line"><span class="comment">// 初始化dp中的元素为1</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    dp[i] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123; <span class="comment">// 遍历[0,i-1]找出最大的满足A[i]&gt;=A[j]的dp[j]，然后更新</span></span><br><span class="line">        <span class="keyword">if</span> (A[i] &gt;= A[j] &amp;&amp; (dp[j] + <span class="number">1</span> &gt; dp[i])) &#123;</span><br><span class="line">            dp[i] = dp[j] + <span class="number">1</span>; <span class="comment">// 状态转移方程，更新dp[i]</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans = Math.max(ans, dp[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="最长公共子序列（LCS）">3. 最长公共子序列（LCS）</h1><p>给定两个字符串（或数字序列）A和B，求它们的最长公共子序列（可以不连续）</p>
+<p>如A&#x3D;”sadstory”<br>B&#x3D;”adminsorry”<br>最长公共子序列为”adsory”，长度为6</p>
+<h2 id="结题思路-2">3.1. 结题思路</h2><p>1.设计状态：dp[i][j] 表示字符串A的i号位和字符串B的j号位之前的LCS长度</p>
+<p>2.找出关系：<br>(1) 若A[i]=&#x3D;B[i]，相当于在dp[i-1][j-1]的情况下多出一个相同字符，LCS长度增加，即dp[i][j]&#x3D;dp[i-1][j-1]+1<br>(2) 若A[i]!&#x3D;B[i]，则LCS长度没有增加，所以要继承前面的长度，前面的长度有两种，分别是dp[i-1][j]和dp[i][j-1]，所以取它们两个的最大值作为dp[i][j]的值，<br>即dp[i][j]&#x3D;max{dp[i-1][j] , dp[i][j-1]}</p>
+<p>3.设计状态转移方程：<br>dp[i]&#x3D;dp[i-1][j-1]+1, A[i]=&#x3D;B[i]<br>dp[i]&#x3D;max{dp[i-1][j] , dp[i][j-1]} , A[i]!&#x3D;B[i] </p>
+<h2 id="关键代码-2">3.2. 关键代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>[] A = <span class="keyword">new</span> <span class="keyword">char</span>[n];</span><br><span class="line"><span class="keyword">char</span>[] B = <span class="keyword">new</span> <span class="keyword">char</span>[n];</span><br><span class="line"><span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</span><br><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>] = (A[<span class="number">0</span>] == B[<span class="number">0</span>]) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 初始化第一行和第一列</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (A[i] == B[i]) &#123;</span><br><span class="line">        dp[<span class="number">0</span>][i] = <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        dp[<span class="number">0</span>][i] = dp[<span class="number">0</span>][i - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (A[j] == B[j]) &#123;</span><br><span class="line">        dp[j][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        dp[j][<span class="number">0</span>] = dp[j - <span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 从(1,1)开始遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (A[i] == B[i]) &#123;</span><br><span class="line">            dp[i][j] = dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            dp[i][j] = Math.max(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ans = dp[n][n];</span><br></pre></td></tr></table></figure>
+
+<h1 id="最长回文子串">4. 最长回文子串</h1><p>给出一个字符串S，求S的最长回文子串的长度</p>
+<p>如字符串”abcDDDccba”的最长回文子串是”cDDDc”，长度为5</p>
+<h2 id="结题思路-3">4.1. 结题思路</h2><p>1.设计状态：dp[i][j] 表示S[i]到S[j]所表示的子串是否是回文子串，是则为1，不是则为0。dp[i][j]有初始的状态，单个字符时，一定是回文串（即dp[i][i]&#x3D;1）；两个字符时，如果相同则是回文串（即dp[i][i+1]&#x3D;(S[i]=&#x3D;S[i+1]):1?0）</p>
+<p>2.找出关系：<br>根据S[i]是否等于S[j]，可以分为两类：<br>(1) 若S[i]=&#x3D;S[j]，如果[i+1,j-1]是回文串（即dp[i+1][j-1]&#x3D;1），那么[i,j]也是回文串（即dp[i][j]&#x3D;1）；如果[i+1,j-1]不是回文串，[i,j]就也不是回文串<br>(2) 若S[i]!&#x3D;S[j]，则[i,j]必然不是回文串</p>
+<p>3.设计状态转移方程：<br>dp[i][j]&#x3D;dp[i+1][j-1]，S[i]=&#x3D;S[j]<br>dp[i][j]&#x3D;0，S[i]!&#x3D;S[j]<br>边界：dp[i][i]&#x3D;1， dp[i][i+1]&#x3D;(S[i]&#x3D;&#x3D;S[i+1]):1?0<br>因为[i,j]是根据[i+1,j-1]推出来的，即长的子串由短的子串推出，所以在迭代计算dp时，可以按长度递增的顺序不断推出较长的子串</p>
+<h2 id="关键代码-3">4.2. 关键代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">&quot;abcDDDccba&quot;</span>;</span><br><span class="line"><span class="keyword">int</span> len = str.length();</span><br><span class="line"><span class="keyword">char</span>[] S = str.toCharArray();</span><br><span class="line"><span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[len][len]; <span class="comment">// 初始化全为0</span></span><br><span class="line"><span class="keyword">int</span> ans = <span class="number">1</span>; <span class="comment">// 记录最长回文子串长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化单个字符</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">    dp[i][i] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 初始化两个字符</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (S[i] == S[i + <span class="number">1</span>]) &#123;</span><br><span class="line">        dp[i][i + <span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        ans = <span class="number">2</span>; <span class="comment">// 如果有长度为2的回文子串，改变ans</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        dp[i][i + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> L = <span class="number">3</span>; L &lt;= len; L++) &#123; <span class="comment">// 长度从3开始递增</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = i + L - <span class="number">1</span>; <span class="comment">// i为左端，j为右端</span></span><br><span class="line">        <span class="keyword">if</span> (S[i] == S[j] &amp;&amp; dp[i + <span class="number">1</span>][j - <span class="number">1</span>] == <span class="number">1</span>) &#123; <span class="comment">// 两端相等&amp;&amp;里面是回文子串</span></span><br><span class="line">            dp[i][j] = <span class="number">1</span>;</span><br><span class="line">            ans = L;</span><br><span class="line">        &#125; <span class="comment">// 其余都为0，不需要改变</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>另一个简化方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123; <span class="comment">// i逆序</span></span><br><span class="line">    dp[i][i] = <span class="keyword">true</span>; <span class="comment">// 单个字符</span></span><br><span class="line">    <span class="keyword">if</span> (i + <span class="number">1</span> &lt; len &amp;&amp; S[i] == S[i + <span class="number">1</span>]) dp[i][i + <span class="number">1</span>] = <span class="keyword">true</span>; <span class="comment">// 两个字符</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">2</span>; j &lt; len; j++) &#123; <span class="comment">// j正序</span></span><br><span class="line">        <span class="keyword">if</span> (S[i] == S[j] &amp;&amp; dp[i + <span class="number">1</span>][j - <span class="number">1</span>] == <span class="keyword">true</span>) &#123; <span class="comment">// 两端相等&amp;&amp;里面是回文子串</span></span><br><span class="line">            dp[i][j] = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag"># 动态规划</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/26/2020%E7%AC%94%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/" rel="prev" title="2020笔试题总结">
+      <i class="fa fa-chevron-left"></i> 2020笔试题总结
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/22/%E5%A6%82%E4%BD%95%E5%9C%A8github%E4%B8%8A%E6%90%AD%E5%8D%9A%E5%AE%A2/" rel="next" title="如何在github上搭博客">
+      如何在github上搭博客 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97%E5%92%8C"><span class="nav-text">1. 最大连续子序列和</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-text">1.1. 结题思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81"><span class="nav-text">1.2. 关键代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E9%95%BF%E4%B8%8D%E4%B8%8B%E9%99%8D%E5%AD%90%E5%BA%8F%E5%88%97%EF%BC%88LIS%EF%BC%89"><span class="nav-text">2. 最长不下降子序列（LIS）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E9%A2%98%E6%80%9D%E8%B7%AF-1"><span class="nav-text">2.1. 结题思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81-1"><span class="nav-text">2.2. 关键代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97%EF%BC%88LCS%EF%BC%89"><span class="nav-text">3. 最长公共子序列（LCS）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E9%A2%98%E6%80%9D%E8%B7%AF-2"><span class="nav-text">3.1. 结题思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81-2"><span class="nav-text">3.2. 关键代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2"><span class="nav-text">4. 最长回文子串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E9%A2%98%E6%80%9D%E8%B7%AF-3"><span class="nav-text">4.1. 结题思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81-3"><span class="nav-text">4.2. 关键代码</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Herfrain</p>
+  <div class="site-description" itemprop="description">记录美好</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/herfrain" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;herfrain" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Herfrain</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">64k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:56</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div><!-- 背景离子效果 -->
+<script color="0,0,255" pointColor="255,0,255" opacity="0.7" count="99"  zIndex="-1"
+ src="/lib/canvas-nest/dist/canvas-nest.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
